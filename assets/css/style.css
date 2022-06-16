@@ -1,2 +1,16 @@
 /* Using framework materialize */
 
+body {
+    background: rgb(44, 22, 44);
+}
+
+.genre-hero {
+    background: rgb(88, 66, 88)
+    
+}
+
+.playsongbtn {
+    background: rgb(44, 22, 44);
+}
+
+/* text color rgb(184, 180, 184) */
