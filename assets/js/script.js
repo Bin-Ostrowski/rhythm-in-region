@@ -10,4 +10,5 @@ let getEventByCity = () => {
       console.log(data._embedded.events)
     })
   })
-}
+};
+
