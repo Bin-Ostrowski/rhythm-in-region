@@ -1,4 +1,7 @@
 /* Using framework materialize */
+* {
+    box-sizing: border-box;
+}
 
 body {
     background: rgb(44, 22, 44);
@@ -14,91 +17,193 @@ body {
     background: rgb(88, 66, 88); 
 }
 
+.genre-container {
+    font-size: 7vw;
+    line-height: 110%;
+    text-align: center;
+    margin: 2.8rem 0 1.68rem 0;
+}
+
+.band-info-container {
+    display: flex;
+}
 .button-header {
     background: rgb(58, 42, 73);
     height: 40vw;
-    
-    /* width: 100%; */
+    flex-direction: row;
     position: relative;
-    /* padding-left: 80px; */
     left: 7vw;
     width: 82%;
+    padding-top: 1.3vw;
+    top: 1vw;
+    flex-grow: 1;
+    font-size: 3.8vw;
+    line-height: 110%;
+    margin: 1.52rem 0 0.912rem 0;
+    text-align: center;
 }
+
 
 .button-header2 {
     background: rgb(58, 42, 73);
     height: 40vw;
-    
-    /* width: 100%; */
+    overflow: auto;
+    flex-grow: 1;
     position: relative;
-    /* padding-left: 80px; */
     left: 7vw;
     width: 82%;
+    
 }
 
 .ticket-btn1,
 .ticket-btn2 {
-    background: rgb(25, 88, 124);
-    font-size: 1.8rem;
+    font-size: 2.6vw;
     font-weight: 400;
     display: flex;
     gap: 10px 40px;
     width: 24vw;
     height: 9vw;
     border-radius: 11px;
+    position: relative;
+    top: -42.2vw;
+    left: 38vw;
+    align-items: center;
 }
 
-.playsongbtn1,
+
+/* .playsongbtn1,
 .playsongbtn2,
 .playsongbtn3,
 .playsongbtn4,
 .playsongbtn5,
 .playsongbtn6 {
+        /* background: rgb(44, 22, 44);
+        font-size: 1.8rem;
+        font-weight: 400; */
+    
+        /* gap: 19px 19px 19px 40px; */
+        /* width: 24vw;
+        border-radius: 11px;
+        /* z-index: 2; */
+        /* flex: row; */
+        /* justify-content: space-between; 
+        align-items: center; 
+        text-align: center;
+        box-sizing: border-box;
+        margin: 10px auto; */ 
+        
+/* } */
+.playsongbtn1 {
+    background: rgb(44, 22, 44);
+    font-size: 1.8rem;
+    font-weight: 400;
+    display: flex;
+    width: 24vw;
+    height: 9vw;
+    width: 24vw;
+    border-radius: 11px;
+    flex: row;
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px auto;
+    position: relative;
+    right: -10vw;
+    top: -23.5vw;
+}
+
+.playsongbtn2 {
+    background: rgb(44, 22, 44);
+    font-size: 1.8rem;
+    font-weight: 400;
+    display: flex;
+    width: 24vw;
+    height: 9vw;
+    width: 24vw;
+    border-radius: 11px;   
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    right: -38vw;
+    top: -32.4vw;
+}
+
+.playsongbtn3 {
+    background: rgb(44, 22, 44);
+    font-size: 1.8rem;
+    font-weight: 400;
+    display: flex;
+    width: 24vw;
+    height: 9vw;
+    width: 24vw;
+    border-radius: 11px;
+    flex: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    right: -10vw;
+    top: -30vw;
+}
+
+.playsongbtn4 {
+    background: rgb(44, 22, 44);
+    font-size: 1.8rem;
+    font-weight: 400;
+    display: flex;
+    width: 24vw;
+    height: 9vw;
+    /* gap: 19px 19px 19px 40px; */
+    width: 24vw;
+    border-radius: 11px;
+    /* z-index: 2; */
+    flex: row;
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px auto;
+}
+
+.playsongbtn5 {
+    background: rgb(44, 22, 44);
+    font-size: 1.8rem;
+    font-weight: 400;
+    display: flex;
+    width: 24vw;
+    height: 9vw;
+    /* gap: 19px 19px 19px 40px; */
+    width: 24vw;
+    border-radius: 11px;
+    /* z-index: 2; */
+    flex: row;
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px auto;
+
+    }.playsongbtn6 {
         background: rgb(44, 22, 44);
         font-size: 1.8rem;
         font-weight: 400;
         display: flex;
+        width: 24vw;
+        height: 9vw;
         /* gap: 19px 19px 19px 40px; */
         width: 24vw;
         border-radius: 11px;
         /* z-index: 2; */
-}
-.playsongbtn1 {
-    position: relative;
-    right: -90px;
-    top: -19vw;
-    top: -219px;
-}
-
-.playsongbtn2 {
-    position: relative;
-    right: -343px;
-    /* top: 6vw;
-    top: -42vw; */
-    top: -295px;
-}
-
-.playsongbtn3 {
-    position: relative;
-    right: -89px;
-    top: -275px;
-}
-
-.playsongbtn4 {
-    position: relative;
-        right: -35vw;
-        top: -32vw;
-}
-
-.playsongbtn5 {
-    position: relative;
-        right: -35vw;
-        top: -32vw;
-
-    }.playsongbtn6 {
-    position: relative;
-        right: -35vw;
-        top: -32vw;
+        flex: row;
+        justify-content: space-between; 
+        align-items: center; 
+        text-align: center;
+        box-sizing: border-box;
+        margin: 10px auto;
 }
 
 /* flex: space-evenly;
@@ -109,7 +214,7 @@ body {
         
         
         /* flex-wrap: wrap;
-        align-content: space-between; */ */
+        align-content: space-between; */ 
     
 
 
