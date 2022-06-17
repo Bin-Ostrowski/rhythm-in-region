@@ -9,6 +9,7 @@
   // const for genreInput
   // const for cityInput
 
+  
 //create event listener for search btn to search api
 
 //search by city API
@@ -38,13 +39,21 @@ let generateEvent = (city, genre) => {
 
 // SHAZAAM API, fetch by artist name, list top 5 songs
 // for artists with more than one word in name, delete spaces (join characters)
-// let artist = "amonamarth"
-// let apiKey = '&rapidapi-key=fc4954542fmshb1113f85fac508bp104f1bjsn81ed981864f0'
-// let shazaamApiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5&rapidapi-key=fc4954542fmshb1113f85fac508bp104f1bjsn81ed981864f0' + apiKey;
-// fetch(apiUrl)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
+
+function getTop5Songs (artist) {
+  let apiKey = '&rapidapi-key=fc4954542fmshb1113f85fac508bp104f1bjsn81ed981864f0'
+  let apiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5' + apiKey;
+  fetch(apiUrl).then(function (response) {
+    response.json().then(function (data) {
+      console.log(data)
+      for (i=0; i < 3; i++) {
+        //displays track name and url
+        console.log(data.tracks.hits[i].track.title + " " +  data.tracks.hits[i].track.url)
+      }
+    })
+  })
+
+}
 
 
 
