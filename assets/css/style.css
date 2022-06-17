@@ -4,13 +4,114 @@ body {
     background: rgb(44, 22, 44);
 }
 
-.genre-hero {
-    background: rgb(88, 66, 88)
-    
+.container {
+    width: 80%;
+    height: 100%;
+    background: rgb(88, 66, 88);  
 }
 
-.playsongbtn {
-    background: rgb(44, 22, 44);
+.genre-hero {
+    background: rgb(88, 66, 88); 
 }
+
+.button-header {
+    background: rgb(58, 42, 73);
+    height: 40vw;
+    
+    /* width: 100%; */
+    position: relative;
+    /* padding-left: 80px; */
+    left: 7vw;
+    width: 82%;
+}
+
+.button-header2 {
+    background: rgb(58, 42, 73);
+    height: 40vw;
+    
+    /* width: 100%; */
+    position: relative;
+    /* padding-left: 80px; */
+    left: 7vw;
+    width: 82%;
+}
+
+.ticket-btn1,
+.ticket-btn2 {
+    background: rgb(25, 88, 124);
+    font-size: 1.8rem;
+    font-weight: 400;
+    display: flex;
+    gap: 10px 40px;
+    width: 24vw;
+    height: 9vw;
+    border-radius: 11px;
+}
+
+.playsongbtn1,
+.playsongbtn2,
+.playsongbtn3,
+.playsongbtn4,
+.playsongbtn5,
+.playsongbtn6 {
+        background: rgb(44, 22, 44);
+        font-size: 1.8rem;
+        font-weight: 400;
+        display: flex;
+        /* gap: 19px 19px 19px 40px; */
+        width: 24vw;
+        border-radius: 11px;
+        /* z-index: 2; */
+}
+.playsongbtn1 {
+    position: relative;
+    right: -90px;
+    top: -19vw;
+    top: -219px;
+}
+
+.playsongbtn2 {
+    position: relative;
+    right: -343px;
+    /* top: 6vw;
+    top: -42vw; */
+    top: -295px;
+}
+
+.playsongbtn3 {
+    position: relative;
+    right: -89px;
+    top: -275px;
+}
+
+.playsongbtn4 {
+    position: relative;
+        right: -35vw;
+        top: -32vw;
+}
+
+.playsongbtn5 {
+    position: relative;
+        right: -35vw;
+        top: -32vw;
+
+    }.playsongbtn6 {
+    position: relative;
+        right: -35vw;
+        top: -32vw;
+}
+
+/* flex: space-evenly;
+        height: 9vw;
+        
+        flex-direction: column;
+        /* position: absolute; */
+        
+        
+        /* flex-wrap: wrap;
+        align-content: space-between; */ */
+    
+
+
 
 /* text color rgb(184, 180, 184) */
