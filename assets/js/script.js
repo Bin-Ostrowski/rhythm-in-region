@@ -12,32 +12,41 @@
 //create event listener for search btn to search api
 
 //search by city API
-let getEventByCity = () => {
-  let APIKey = "apikey=MYfmJhBCLx9HATehV1SabFFOewAaaLjb"
-  let APIUrl = "https://app.ticketmaster.com/discovery/v2/events.json?city=portland&" + APIKey
+let generateEvent = (city, genre) => {
+  let APIKey = "&apikey=MYfmJhBCLx9HATehV1SabFFOewAaaLjb"
+  let APIUrl = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&classificationName=" + genre + "&size=10&city=" + city  + APIKey
   
   // grab events info for portland - pass in genera paramater (find by data.classifications.genre.name) 
   fetch(APIUrl).then(function (response) {
     response.json().then(function (data) {
-      console.log(data._embedded.events)
 
-        // display event for specific genre
-        for (i = 0; i < data._embedded.events.length; i++) {
-          if (data._embedded.events[i].classifications[0].genre.name === "Rock") { //replace "Rock" with picked genre
-             console.log(data._embedded.events[i])
-
-             //grab events info: band name, 
-             //venue, 
-             //date, 
-             //time, 
-             //ticket url
-          }
-        }
+      console.log(data._embedded.events)   
+      //     //grab events info: band name, 
+      //     //venue, 
+      //     //date, 
+      //     //time, 
+      //     //ticket url
+        })
     })
-  })
-};
-  
-getEventByCity();
+  }
+
+
+
+// display event for specific genre
+
+
+
+// SHAZAAM API, fetch by artist name, list top 5 songs
+// for artists with more than one word in name, delete spaces (join characters)
+// let artist = "amonamarth"
+// let apiKey = '&rapidapi-key=fc4954542fmshb1113f85fac508bp104f1bjsn81ed981864f0'
+// let shazaamApiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5&rapidapi-key=fc4954542fmshb1113f85fac508bp104f1bjsn81ed981864f0' + apiKey;
+// fetch(apiUrl)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+
+
 
 //display data in new container 
 //create container parent
@@ -66,6 +75,3 @@ getEventByCity();
     // add event listener to btn to link ticket URL to ticketmaster
 
     //append everything to parent or sibling
-
-
-
