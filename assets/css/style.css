@@ -15,3 +15,37 @@ body {
     background-repeat: no-repeat;
     
 }
+
+#pick-city {
+    
+    margin-top: 4px;
+}
+
+#genre-pick {
+    margin-top: 4px;
+}
+
+#search-bar {
+    background-color: lightgray;
+    color: black;
+}
+
+input::placeholder {
+    color: black;
+}
+
+#search-btn {
+    margin-top: 75px;
+    display: inline-block;
+    justify-content: center;
+    
+}
+
+#search-area {
+    border: 2px solid black;
+}
+
+.sample-title {
+    margin-top: 67px;
+}
+
