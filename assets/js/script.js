@@ -53,21 +53,23 @@ function getTop3Songs(artist) {
         console.log(data)
 
         //for loop to get first three songs listed 
-        let songSamplesContainer = document.createElement('ul')
-        songSamplesContainer.textContent = " "
+        let songSamplesContainer = document.querySelector(".sample-songs")
+  
         document.body.append(songSamplesContainer)
         for (i = 0; i < 3; i++) {
           //displays track name and url
           console.log(data.tracks)
           console.log(data.tracks.hits[i].track.title + " " + data.tracks.hits[i].track.url)
 
+          
+
           //display three songs
           songListItem = document.createElement('li')
           playbtnEl = document.createElement('button')
 
-          // set href link for song button
-          playbtnEl.setAttribute(href, data.tracks.hits[i].track.url)
-          playbtnEl.setAttribute(target, _blank)
+          songSamplesContainer.appendChild(songListItem)
+
+          // song title and artist name
           playbtnEl.innerHTML = "Play " + data.tracks.hits[i].track.title + " by " + artist
 
           // append button and song names
@@ -197,12 +199,11 @@ let displayResults = function (data) {
   // resultEl.append(eventEl);
 
   //  };
-  searchContainer.append(resultEl);
+  // searchContainer.append(resultEl);
 
 };
 
 //add event listener to btn and link URL to play that song - do for all three songs
-
 // add event listener to btn to link ticket URL to ticketmaster
 
 generateEvent(city, genre);
