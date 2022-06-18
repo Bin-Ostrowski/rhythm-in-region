@@ -29,6 +29,11 @@ body {
     display: flex;
 }
 
+input[type="submit"]
+{
+    display:hidden;
+}
+
 .button-header {
     background: rgb(45, 31, 57);
     height: 40vw;
@@ -61,13 +66,6 @@ body {
     position: relative;
     left: -6.5vw;
 } 
-
-/* .header-h4 {
- font-s
-} */
-
-
-
 
 /* .button-header2 {
     background: rgb(58, 42, 73);
