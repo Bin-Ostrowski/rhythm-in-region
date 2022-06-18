@@ -21,18 +21,17 @@
 <section class="genre-hero container">
     <div>
         <h1 class="genre-container grey-text text-lighten-1">{Genre} Concerts in {City Name}</h1>
-   
         <!-- Add buton functionality bones -->
-    
-    
-    <div class="band-info-container container-row">
+    <div class="band-info-container row">
         <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
-       <div class="button-header columns"> 
-       <h4 class=  "amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME}</h4>
-        <div class="playsongbtn1 col pink-text text-lighten-5">PLAY (SONG NAME)</div>
-        <div class="playsongbtn2 col pink-text text-lighten-5">PLAY (SONG NAME)</div>
-        <div class="playsongbtn3 col pink-text text-lighten-5">PLAY (SONG NAME)</div>
-        <div class="ticket-btn1 col blue-text text-lighten-5"> PURCHASE TICKETS</div>
+       <div class="button-header container columns"> 
+       <h4 class="header-h4 amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME} <span id=listed-band-info></span></h4>
+       <form id="button-header1" class="">
+        <input name="song-buttons" id="song-buttons" type="btn" autofocus="true" class=""
+        <button type="submit" class="btn playsongbtn1 col pink-text text-lighten-5">Play Song</button>
+        <button type="submit" class="btn playsongbtn2 col pink-text text-lighten-5">Play Song</button>
+        <button type="submit" class="btn playsongbtn3 col pink-text text-lighten-5">Play Song</button>
+        <button type="submit" class="btn ticket-btn1 blue-text text-lighten-5">PURCHASE TICKETS</button>
     </div>
 </div>
     
@@ -40,23 +39,32 @@
 
     <!-- Add buton functionality bones -->
 
-    <div class="band-info-container-bottom container-row">
+    <div class="band-info-container-bottom row">
         <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
-        <h4 class="button-header2 amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME}</h4>
-        <div class="playsongbtn4 pink-text text-lighten-5">PLAY (SONG NAME)</div>
-        <div class="playsongbtn5 pink-text text-lighten-5">PLAY (SONG NAME)</div>
-        <div class="playsongbtn6 pink-text text-lighten-5">PLAY (SONG NAME)</div>
-        <div class="ticket-btn2 blue-text text-lighten-5"> PURCHASE TICKETS</div>
+        <div class="button-header2 columns">
+        <h4 class="amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME}</h4>
+        <!-- <div class="playsongbtn4 pink-text text-lighten-5">PLAY (SONG NAME)</div> -->
+        <button type="submit" class="btn playsongbtn4 col pink-text text-lighten-5">Play Song</button>
+        <!-- <div class="playsongbtn5 pink-text text-lighten-5">PLAY (SONG NAME)</div> -->
+        <button type="submit" class="btn playsongbtn5 col pink-text text-lighten-5">Play Song</button>
+        <!-- <div class="playsongbtn6 pink-text text-lighten-5">PLAY (SONG NAME)</div> -->
+        <button type="submit" class="btn playsongbtn6 col pink-text text-lighten-5">Play Song</button>
+        <!-- <div class="ticket-btn2 blue-text text-lighten-5"> PURCHASE TICKETS</div> -->
+        <button type="submit" class="btn ticket-btn2 blue-text text-lighten-5">PURCHASE TICKETS</button>
     </div>
     </div>
     </div>
 </div>
+</form>
 </section>
+
     
 <footer>
 
     
 </footer>
+
+
 
 </body>
 </html>

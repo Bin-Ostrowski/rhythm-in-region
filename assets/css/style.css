@@ -9,8 +9,9 @@ body {
 
 .container {
     width: 80%;
-    height: 100%;
-    background: rgb(88, 66, 88);  
+    height: 100vh;
+    background: rgb(88, 66, 88);
+    min-height: 100%; 
 }
 
 .genre-hero {
@@ -27,35 +28,78 @@ body {
 .band-info-container {
     display: flex;
 }
+
 .button-header {
-    background: rgb(58, 42, 73);
+    background: rgb(45, 31, 57);
     height: 40vw;
     flex-direction: row;
     position: relative;
-    left: 7vw;
     width: 82%;
     padding-top: 1.3vw;
     top: 1vw;
     flex-grow: 1;
-    font-size: 3.8vw;
+    font-size: 4vw;
     line-height: 110%;
-    margin: 1.52rem 0 0.912rem 0;
+    margin: 1.52vw 0 0.912vw 0;
     text-align: center;
 }
 
+.band-info-container-bottom {
+    background: rgb(45, 31, 57);
+    height: 40vw;
+    flex-direction: row;
+    position: relative;
+    width: 82%;
+    padding-top: 1.3vw;
+    top: 1vw;
+    flex-grow: 1;
+    font-size: 4vw;
+    line-height: 110%;
+    margin: 1.52rem 0 0.912rem 0;
+    text-align: center;
+    width: 64vw;
+    position: relative;
+    left: -6.5vw;
+} 
 
-.button-header2 {
+/* .header-h4 {
+ font-s
+} */
+
+
+
+
+/* .button-header2 {
     background: rgb(58, 42, 73);
     height: 40vw;
-    overflow: auto;
-    flex-grow: 1;
+    flex-direction: row;
     position: relative;
-    left: 7vw;
     width: 82%;
+    padding-top: 1.3vw;
+    top: 1vw;
+    flex-grow: 1;
+    font-size: 4vw;
+    line-height: 110%;
+    margin: 1.52rem 0 0.912rem 0;
+    text-align: center;
+    
+} */
+
+.ticket-btn1 {
+    font-size: 2.6vw;
+    font-weight: 400;
+    display: flex;
+    gap: 10px 40px;
+    width: 24vw;
+    height: 9vw;
+    border-radius: 11px;
+    position: relative;
+    top: -2.8800000000000026vw;
+    left: 34.1vw;
+    align-items: center;
     
 }
 
-.ticket-btn1,
 .ticket-btn2 {
     font-size: 2.6vw;
     font-weight: 400;
@@ -65,145 +109,127 @@ body {
     height: 9vw;
     border-radius: 11px;
     position: relative;
-    top: -42.2vw;
-    left: 38vw;
+    top: -10.300000000000002vw;
+    left: 35.1vw;
     align-items: center;
+    position: relative;
+    top: 3.9vw;
+    left: 10.7vw;
+
 }
 
-
-/* .playsongbtn1,
-.playsongbtn2,
-.playsongbtn3,
-.playsongbtn4,
-.playsongbtn5,
-.playsongbtn6 {
-        /* background: rgb(44, 22, 44);
-        font-size: 1.8rem;
-        font-weight: 400; */
-    
-        /* gap: 19px 19px 19px 40px; */
-        /* width: 24vw;
-        border-radius: 11px;
-        /* z-index: 2; */
-        /* flex: row; */
-        /* justify-content: space-between; 
-        align-items: center; 
-        text-align: center;
-        box-sizing: border-box;
-        margin: 10px auto; */ 
-        
-/* } */
 .playsongbtn1 {
     background: rgb(44, 22, 44);
-    font-size: 1.8rem;
+    font-size: 2.6vw;
     font-weight: 400;
     display: flex;
     width: 24vw;
     height: 9vw;
     width: 24vw;
     border-radius: 11px;
-    flex: row;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
     box-sizing: border-box;
     margin: 10px auto;
     position: relative;
-    right: -10vw;
-    top: -23.5vw;
+    right: -6.2vw;
+    top: 1vw;
 }
 
 .playsongbtn2 {
     background: rgb(44, 22, 44);
-    font-size: 1.8rem;
+    font-size: 2.6vw;
     font-weight: 400;
     display: flex;
     width: 24vw;
     height: 9vw;
     width: 24vw;
-    border-radius: 11px;   
+    border-radius: 11px;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     box-sizing: border-box;
     position: relative;
-    right: -38vw;
-    top: -32.4vw;
+    right: -10.100000000000001vw;
+    top: 2.5999999999999996vw;
 }
 
 .playsongbtn3 {
     background: rgb(44, 22, 44);
-    font-size: 1.8rem;
+    font-size: 2.6vw;
     font-weight: 400;
     display: flex;
     width: 24vw;
     height: 9vw;
     width: 24vw;
     border-radius: 11px;
-    flex: row;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     box-sizing: border-box;
     position: relative;
-    right: -10vw;
-    top: -30vw;
+    right: 17.8vw;
+    top: 6vw;
 }
 
 .playsongbtn4 {
     background: rgb(44, 22, 44);
-    font-size: 1.8rem;
+    font-size: 2.6vw;
     font-weight: 400;
     display: flex;
     width: 24vw;
     height: 9vw;
-    /* gap: 19px 19px 19px 40px; */
     width: 24vw;
     border-radius: 11px;
-    /* z-index: 2; */
     flex: row;
     justify-content: space-between; 
     align-items: center; 
     text-align: center;
     box-sizing: border-box;
     margin: 10px auto;
+    position: relative;
+    top: 1.2vw;
+    left: 6.3vw;
 }
 
 .playsongbtn5 {
     background: rgb(44, 22, 44);
-    font-size: 1.8rem;
+    font-size: 2.6vw;
     font-weight: 400;
     display: flex;
     width: 24vw;
     height: 9vw;
-    /* gap: 19px 19px 19px 40px; */
     width: 24vw;
     border-radius: 11px;
-    /* z-index: 2; */
     flex: row;
     justify-content: space-between; 
     align-items: center; 
     text-align: center;
     box-sizing: border-box;
     margin: 10px auto;
+    top: 1vw;
+    position: relative;
+    left: 10.4vw;
 
     }.playsongbtn6 {
         background: rgb(44, 22, 44);
-        font-size: 1.8rem;
+        font-size: 2.6vw;
         font-weight: 400;
         display: flex;
         width: 24vw;
         height: 9vw;
-        /* gap: 19px 19px 19px 40px; */
         width: 24vw;
         border-radius: 11px;
-        /* z-index: 2; */
         flex: row;
         justify-content: space-between; 
         align-items: center; 
         text-align: center;
         box-sizing: border-box;
         margin: 10px auto;
+        position: relative;
+        top: 3vw;
+        left: 5.9vw;
 }
 
 /* flex: space-evenly;
