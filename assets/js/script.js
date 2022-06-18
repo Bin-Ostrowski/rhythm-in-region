@@ -21,38 +21,59 @@ let generateEvent = (city, genre) => {
   fetch(APIUrl).then(function (response) {
     response.json().then(function (data) {
 
-      console.log(data._embedded.events)   
-      //     //grab events info: band name, 
-      //     //venue, 
-      //     //date, 
-      //     //time, 
-      //     //ticket url
-        })
-    })
-  }
+      console.log(data._embedded.events)
+              //grab events info: band name,
+
+
+        // list container
+
+    // event info for each event
+      for (i=0; i < 10; i++) { 
+        
+        // container for bane name and info 
+        // picture of band? 
+        // band name
+        let bandName = data._embedded.events[i].name;
+        // for band name, call getTop3Songs function
+        // venue
+        let venue = data._embedded.events[i]._embedded.venues[0].name;
+        // date 
+        let date = data._embedded.events[i].dates.start.localDate
+        // time 
+        let time = data._embedded.events[i].dates.start.dateTime
+        //ticket url
+        // button to buy tickets
+        let ticketSite = data._embedded.events[i].url;
+
+        // add list to container
+        // band name list
+        // event info list items
+     
+       
+      }
+      
+  })
+})
+}
 
 
 
 // display event for specific genre
 
-
-
-// SHAZAAM API, fetch by artist name, list top 5 songs
+// SHAZAAM API, fetch by artist name, list top 3 songs
 // for artists with more than one word in name, delete spaces (join characters)
-
-function getTop5Songs (artist) {
+function getTop3Songs (artist) {
   let apiKey = '&rapidapi-key=fc4954542fmshb1113f85fac508bp104f1bjsn81ed981864f0'
   let apiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5' + apiKey;
   fetch(apiUrl).then(function (response) {
     response.json().then(function (data) {
       console.log(data)
       for (i=0; i < 3; i++) {
-        //displays track name and url
-        console.log(data.tracks.hits[i].track.title + " " +  data.tracks.hits[i].track.url)
-      }
+      //displays track name and url
+      console.log(data.tracks.hits[i].track.title + " " +  data.tracks.hits[i].track.url)
+    }
     })
-  })
-
+})
 }
 
 
