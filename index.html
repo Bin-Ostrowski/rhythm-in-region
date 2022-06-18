@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rhythm in Region</title>
 
+    <!--CSS link-->
+  <link rel="stylesheet" href="./assets/css/style.css">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!--CSS link-->
-  <link rel="stylesheet" href="./assets/css/style.css">
+
 
 </head>
 
@@ -19,21 +20,36 @@
 </header>
 
 <body>
-  <div id = "search-container" class="row col s6"> <!--added ID -->
-    <div id="genre-pick">
-      <h3 class="row col s4">Pick a Genre:</h3>
-      <!--dropdown options not appearing. might have to make using js due to materialize-->
-      <form action="">
-        <label for="pick-music"></label>
-        <select name="music">
-          <option value="rock">Rock</option>
-          <option value="hip-hop">Hip-Hop</option>
-          <option value="metal">Metal</option>
-          <option value="country">Country</option>
-        </select>
-      </form>
+  <section class="row">
+    <!--Search Area (Top Left)-->
+    <div id="search-area" class="col s5">
+      <div id="genre-pick" class="col s4">
+        <h4 class="">Pick a Genre:</h4>
+        <input type="text" name="genreSearch" id="search-bar" class="col s8" placeholder="Search Genre...">
+      </div>
+      <div id="pick-city" class="col s4">
+        <h4 id="city-search" class="">Search By City:</h4>
+        <input type="text" name="citySearch" id="search-bar" class="col s9" placeholder="Search City...">
+      </div>
+      <div id="search-btn" class="col s4 bottom">
+        <button id="searchbtn" class="btn-large purple darken-4 right">Find A Concert</button>
+      </div>
     </div>
-  </div> 
+    <div id="sample-song-title" class="col s7 offeset-s5"> 
+      <h3 class="sample-title center-align">Preview Song By Artist</h3>
+    </div>
+  </section>
+  <section class="row">
+    <div id="sample-song" class="col s7 offset-s5">
+      <div id="">
+        
+      </div>
+    </div>
+  </section>
+
+  
+  
+  
 
     <script src = "./assets/js/script.js"></script>
 </body>
