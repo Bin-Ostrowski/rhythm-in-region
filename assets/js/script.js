@@ -45,7 +45,7 @@ let generateEvent = (city, genre) => {
 // SHAZAAM API, fetch by artist name, list top 3 songs
 // for artists with more than one word in name, delete spaces (join characters)
 function getTop3Songs(artist) {
-  let apiKey = '&rapidapi-key=69badd0ce1msh295f287fb731684p19ae03jsn1bf9ab9ed57e'
+  let apiKey = '&rapidapi-key=19780e3d93msh9fedc40057baf5dp1fdd0cjsna1d4a9873045'
   let apiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5' + apiKey;
   fetch(apiUrl).then(function (response) {
     response.json().then(function (data) {
@@ -53,34 +53,40 @@ function getTop3Songs(artist) {
         console.log(data)
 
         //for loop to get first three songs listed 
+        let songSamplesContainer = document.createElement('ul')
+        songSamplesContainer.textContent = " "
+        document.body.append(songSamplesContainer)
         for (i = 0; i < 3; i++) {
           //displays track name and url
+          console.log(data.tracks)
           console.log(data.tracks.hits[i].track.title + " " + data.tracks.hits[i].track.url)
 
-          //display three songs as btns
-          let playbtnEl = document.createElement('button');
-          playbtnEl.textContent = "Play " + data.tracks.hits[i].track.title;
+          //display three songs
+          songListItem = document.createElement('li')
+          playbtnEl = document.createElement('button')
 
-          let btnContainer = document.querySelectorAll('#btn-container');
-          btnContainer[i].append(playbtnEl);
+          // set href link for song button
+          playbtnEl.setAttribute(href, data.tracks.hits[i].track.url)
+          playbtnEl.setAttribute(target, _blank)
+          playbtnEl.innerHTML = "Play " + data.tracks.hits[i].track.title + " by " + artist
+
+          // append button and song names
+          songListItem.appendChild(playbtnEl)
+          songSamplesContainer.appendChild(playbtnEl);
+
+          // when use clicks sample song
+          playbtnEl.addEventListener("click", function () {
+            // new link
+          })
         };
       } else {
         throw Error(response.statusText)
       };
-    }).then((jsonResponse) => {
-      console.log("there were no songs :(")
+
+
     }).catch((error) => {
-      console.log(error)
-      for (i = 0; i < 2; i++) {
-        //displays track name and url
-
-        //display three songs as btns
-        let playbtnEl = document.createElement('button');
-        playbtnEl.textContent = "No songs found"
-
-        let btnContainer = document.querySelectorAll('#btn-container');
-        btnContainer[i].append(playbtnEl);
-      };
+      console.log("no songs available")
+      // do something with the songs
     })
 
   });
