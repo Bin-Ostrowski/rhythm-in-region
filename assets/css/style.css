@@ -2,3 +2,7 @@
 .home-title {
     background-color: #4a148c;
 }
+
+#home {
+    margin: 0;
+}
