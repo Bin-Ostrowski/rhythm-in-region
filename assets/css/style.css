@@ -11,6 +11,5 @@ body {
     background-image: url(../images/background-image1.png);
         max-height: 100vh;
         max-width: 100vw;
-        
         background-size: cover;
 }
