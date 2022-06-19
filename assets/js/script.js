@@ -3,6 +3,8 @@ let searchContainer = document.querySelector("#search-container"); //switch to p
 let genreInput = document.querySelector(".searchGenre");
 let cityInput = document.querySelector(".searchCity");
 
+let songSamplesContainer = document.querySelector(".sample-songs")
+let searchForm = document.querySelector(".userSearch")
 
 
 
@@ -10,36 +12,60 @@ let cityInput = document.querySelector(".searchCity");
 // take in the value of genre and city as parameters for getEventByCityAndGenre
 let buttonHandler = (e) => {
   e.preventDefault();
+
+
+  songSamplesContainer.innerHTML = "";
   let city = cityInput.value;
   let genre = genreInput.value;
-  console.log(city, genre)
+
+  // modal code 
+
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   var elems = document.querySelectorAll('.modal');
+  //   var instances = M.Modal.init(elems);
+
+  //   //error handling
+  //   if (!city || !genre) {
+  //     // open the modal
+  //     instances.open();
+  //     return;
+  //   } else {
+  //     
+  //   }
+
+  // });
+
+  getEventByCityAndGenre(city, genre)
+  searchForm.reset();
+
 }
-
-indie
-// create form el - in HTML
-// drop down menu with genre - first letter has to be cappitalized 
-// search by city name or zipcode
-// create search btn
-//create event listener for search btn to search api
-// eventlistener for user clicking "find a concert" button
-
 
 
 
 //search by city API
 let getEventByCityAndGenre = (city, genre) => {
-  
+
   let APIKey = "&apikey=MYfmJhBCLx9HATehV1SabFFOewAaaLjb"
   let APIUrl = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&classificationName=" + genre + "&size=10&city=" + city + APIKey
 
   // grab events info for portland - pass in genera paramater (find by data.classifications.genre.name) 
   fetch(APIUrl).then(function (response) {
-    response.json().then(function (data) {
-      console.log(data._embedded.events)
+    if (response.ok) {
+      response.json().then(function (data) {
+        displayResults(data._embedded.events);
 
-      displayResults(data._embedded.events);
-    })
+      })
+    } else {
+      throw Error(response.statusText)
+    };
+
+
+  }).catch((error) => {
+    alert("Type in a valid city and genre")
+    // do something with the songs
   })
+
+
 };
 
 // create event listener for submit button
@@ -56,18 +82,12 @@ function getTop3Songs(artist) {
   fetch(apiUrl).then(function (response) {
     response.json().then(function (data) {
       if (response.ok) {
-        console.log(data)
-
-
-
-        let songSamplesContainer = document.querySelector(".sample-songs")
         //for loop to get first three songs listed 
         for (i = 0; i < 3; i++) {
+
           //displays track name and url
           console.log(data.tracks)
           console.log(data.tracks.hits[i].track.title + " " + data.tracks.hits[i].track.url)
-
-
 
           //display three songs
           songListItem = document.createElement('div')
@@ -87,7 +107,7 @@ function getTop3Songs(artist) {
           // when use clicks sample song
           playbtnEl.addEventListener("click", function () {
             // new link
-           
+
           })
         };
       } else {
@@ -105,7 +125,10 @@ function getTop3Songs(artist) {
 
 //display data in new container 
 let displayResults = function (data) {
-  console.log(data);
+  console.log(data)
+  let city = cityInput.value;
+  let genre = genreInput.value;
+
   //create container parent
   let resultEl = document.createElement('div');
   resultEl.id = "resultEl";
@@ -118,8 +141,9 @@ let displayResults = function (data) {
 
     const maximum = setInterval(() => {
       //band name
-      let bandName = data[i].name;
 
+      let bandName = data[i].name;
+      console.log(bandName)
       // venue
       let venue = data[i]._embedded.venues[0].name;
       // date 
@@ -144,7 +168,7 @@ let displayResults = function (data) {
       btnContainer.id = "btn-container";
 
       //call 3 play btns
-      getTop3Songs(data[i].name);
+      getTop3Songs(bandName);
       //append elements
       eventTitleEl.append(eventTitle);
       eventEl.append(eventTitleEl);
@@ -160,22 +184,6 @@ let displayResults = function (data) {
   getArtistSongs(5);
 
   // //ticket url
-  // // let ticketBtnEl = document.createElement("button");
-  // // ticketBtnEl.textContent =  data[i].url;
-  // // btnContainer.append(ticketBtnEl);
-
-
-  // //create button to buy tickets
-
-
-  // //append elements
-  // eventTitleEl.append(eventTitle);
-  // eventEl.append(eventTitleEl);
-  // eventEl.append(btnContainer);
-  // resultEl.append(eventEl);
-
-  //  };
-  // searchContainer.append(resultEl);
 
 };
 

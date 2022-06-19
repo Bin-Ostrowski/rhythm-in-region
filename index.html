@@ -21,7 +21,7 @@
 
 <body>
   <section class="row">
-    <form>
+    <form class="userSearch">
       <!--Search Area (Top Left)-->
       <div id="search-area" class="col s5">
         <div id="genre-pick" class="col s4">
@@ -34,12 +34,27 @@
           <input type="text" name="citySearch" id="search-bar" class="col s9 searchCity" placeholder="Search City...">
         </div>
         <div id="search-btn" class="col s4 bottom">
-          <button type="submit" id="searchBtn" class="btn-large purple darken-4 right">
+          <!--MODAL trigger-->
+          <button data-target="modal1" type="submit" id="searchBtn"
+            class="btn modal-trigger btn-large purple darken-4 right">
             Find A Concert
           </button>
+          
+          <!--MODAL structure-->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Error</h4>
+              <p>Please enter valid city and genre</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
+            </div>
+          </div>
         </div>
       </div>
     </form>
+
+
 
 
     <!--SAMPLE SONG CODES-->
