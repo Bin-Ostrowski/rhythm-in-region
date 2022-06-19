@@ -7,6 +7,7 @@
 
 #home {
     margin: 0;
+    padding-bottom: 10px;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
     background-color: rgb(44, 22, 44);
     padding:20px;
     font-size: 20px;
+    border-radius: 5px;
 }
 
 #search-bar {
@@ -42,7 +44,6 @@ input::placeholder {
     margin-top: 75px;
     display: inline-block;
     justify-content: center;
-    
 }
 
 #search-area, #concert-display {
