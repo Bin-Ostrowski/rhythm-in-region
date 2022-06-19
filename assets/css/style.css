@@ -18,6 +18,7 @@ body {
     
 }
 
+/* Search Area */ 
 #pick-city, #genre-pick {
     margin-top: 4px;
 }
@@ -48,9 +49,13 @@ input::placeholder {
     border: 2px solid black;
 }
 
+/* Ticket Area */
+
 #ticket-title {
     padding-top: 67px;
 }
+
+/* Song Sample Area */
 
 #song-display {
     border: 2px solid black;
