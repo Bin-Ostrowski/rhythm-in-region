@@ -1,6 +1,8 @@
 /* Using framework materialize */
 .home-title {
-    background-color: #4a148c;
+    background-color: rgb(44, 22, 44);
+    padding-left: 10px;
+    border: 2px solid rgb(44, 22, 44);
 }
 
 #home {
@@ -16,13 +18,14 @@ body {
     
 }
 
-#pick-city {
-    
+#pick-city, #genre-pick {
     margin-top: 4px;
 }
 
-#genre-pick {
-    margin-top: 4px;
+#searchbtn {
+    background-color: rgb(44, 22, 44);
+    padding:20px;
+    font-size: 20px;
 }
 
 #search-bar {
