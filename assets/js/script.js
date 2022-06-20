@@ -36,7 +36,6 @@ let buttonHandler = (e) => {
   } else {
     getEventByCityAndGenre(city, genre)
   };
-  searchForm.reset();
 };
 
 
@@ -76,34 +75,21 @@ submitBtn.addEventListener("click", buttonHandler,)
 // SHAZAAM API, fetch by artist name, list top 3 songs
 // for artists with more than one word in name, delete spaces (join characters)
 function getTop3Songs(artist) {
-  let apiKey = '&rapidapi-key=9cb624da72msh7d25642dc2cde6dp150056jsn019c680e11d5'
+  let apiKey = '&rapidapi-key=0829184905msh59b7240ee544d5cp124e7djsne5a0e34755a2'
   let apiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5' + apiKey;
+
+
+
   fetch(apiUrl).then(function (response) {
     response.json().then(function (data) {
       if (response.ok) {
-        //for loop to get first three songs listed 
         for (i = 0; i < 3; i++) {
 
           //displays track name and url
           console.log(data.tracks)
+
           console.log(data.tracks.hits[i].track.title + " " + data.tracks.hits[i].track.url)
 
-          //display three songs
-          songListItem = document.createElement('div')
-          playbtnEl = document.createElement('button')
-
-          // song title and artist name
-          playbtnEl.innerHTML = "Play " + data.tracks.hits[i].track.title + " by " + artist
-
-          // append button and song names
-          songListItem.appendChild(playbtnEl)
-          songSamplesContainer.appendChild(playbtnEl);
-
-          // when use clicks sample song
-          playbtnEl.addEventListener("click", function () {
-            // new link
-
-          })
         };
       } else {
         throw Error(response.statusText)
@@ -119,39 +105,46 @@ function getTop3Songs(artist) {
 };
 
 //display data in new container 
-let displayResults = function (data) { //fuction name is differnt
+let displayResults = function (data) { //function name is differnt
   console.log(data)
 
-  // for (i = 0; i < 10; i++) {
-  //   // band name containers
-  //   // let nameContainer = document.querySelectorAll('#band-name')
-  //   // let otherNameContainer = document.querySelectorAll("#bandName")
-
-  //   // otherNameContainer[i].innerHTML = data[i].name
-  //   // nameContainer[i].innerHTML = data[i].name
-
-  //   // songSamplesContainer.appendChild(songListItem)
-  // }
-
   //grab city and genre from data
-  // let city = cityInput.value;
-  // let genre = genreInput.value;
+  let genre = genreInput.value;
+  let city = cityInput.value;
   let songDisplay = document.querySelector("#result-section");
- 
-  //create container parent
 
+
+
+  //create event info parent container
   let resultEl = document.createElement('div');
   resultEl.id = "concert-display";
   resultEl.setAttribute('class', 'col s7')
-  let resultTitle = document.createElement("h3"); 
+  let resultTitle = document.createElement("h3");
   resultTitle.id = "ticket-title"
-  resultTitle.setAttribute('class', 'center' )
-  resultTitle.textContent = (genre + " Concerts in " + city);
+  resultTitle.setAttribute('class', 'center')
+  resultTitle.textContent = genre + " Concerts in " + city;
   resultEl.appendChild(resultTitle);
 
-  function getArtistInfo(numArtists) { 
+
+
+  // create song sample parent container
+  let sampleResultEl = document.createElement('div');
+  sampleResultEl.setAttribute('class', 'col s5');
+  sampleResultEl.id = "song-display"
+  songDisplay.append(sampleResultEl);
+
+  // song sample title
+  let sampleResultTitle = document.createElement('h3');
+  sampleResultTitle.textContent = "Preview song by artist";
+  sampleResultTitle.setAttribute('class', 'center');
+  sampleResultEl.append(sampleResultTitle);
+
+
+  searchForm.reset();
+
+  function getArtistInfo(numArtists) {
     let i = 0;
-    
+
     const maximum = setInterval(() => {
       //band name
       let bandName = data[i].name;
@@ -163,15 +156,42 @@ let displayResults = function (data) { //fuction name is differnt
       // time 
       let time = data[i].dates.start.localTime;
 
-      // container for bane name and info 
+      // container for band name and info 
       let eventEl = document.createElement('div');
       eventEl.id = "tour-ticket-info";
       let eventTitleEl = document.createElement('div');
       eventTitleEl.id = "tour-info";
       let eventTitle = document.createElement('h4');
       eventTitle.id = "bandName"
-      eventTitle.setAttribute('class', 'center-align amber-text text-darken-1' )
+      eventTitle.setAttribute('class', 'center-align amber-text text-darken-1')
       eventTitle.textContent = bandName + " at " + venue + " " + date + " " + time;
+
+
+
+      // parent container for each band 
+      let sampleBandDisplayContainer = document.createElement('div');
+      sampleBandDisplayContainer.setAttribute('id', 'sample-display');
+
+      // song samples for band
+      let sampleBandName = document.createElement('h4');
+      sampleBandName.setAttribute('class', 'center-align amber-text text-darken-1')
+      sampleBandName.setAttribute('id', 'bandName')
+      sampleBandName.textContent = bandName;
+
+      // song buttons
+      let sampleBtn = document.createElement('button');
+      sampleBtn.setAttribute('class', 'b1 btn playsongbtn1 col pink-text text-lighten-5');
+      sampleBtn.innerHTML = ('song URL');
+
+      // append band container to parent container 
+      sampleResultEl.append(sampleBandDisplayContainer);
+
+      // append band name to parent container
+      sampleBandDisplayContainer.append(sampleBandName);
+
+      // append button to parent container
+      sampleBandDisplayContainer.append(sampleBtn);
+
 
       //ticket url
       let ticketBtnEl = document.createElement("button");
@@ -183,6 +203,7 @@ let displayResults = function (data) { //fuction name is differnt
 
       //call 3 play btns
       getTop3Songs(bandName);
+
 
       //append elements
       eventTitleEl.append(eventTitle);

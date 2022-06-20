@@ -40,10 +40,21 @@
             Find A Concert
           </button>
           <!--MODAL structure-->
+          <!--MODAL 1-->
           <div id="modal1" class="modal">
             <div class="modal-content">
               <h4>Error</h4>
-              <p>Please enter valid city and genre</p>
+              <p>Please do not leave the city or genre field blank</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
+            </div>
+          </div>
+          <!--MODAL 2-->
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <h4>Error</h4>
+              <p>We do not recognize your city or genre</p>
             </div>
             <div class="modal-footer">
               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
@@ -55,7 +66,8 @@
   </section>
   <section id="result-section" class="row">
     <!--Sample songs populated-->
-    <div id="song-display" class="col s5">
+    <!--Leave this out of index-->
+    <!-- <div id="song-display" class="col s5">
       <div id="display-title">
         <h3 class="sample-title left-align">Preview Song By Artist</h3>
       </div>
@@ -118,7 +130,7 @@
         <button type="submit" class="b1 btn playsongbtn1 col pink-text text-lighten-5">Play (SONGNAME)</button>
         <button type="submit" class="b1 btn playsongbtn2 col pink-text text-lighten-5">Play (SONGNAME)</button>
         <button type="submit" class="b1 btn playsongbtn3 col pink-text text-lighten-5">Play (SONGNAME)</button>
-      </div>
+      </div> -->
     </div>
     <!--Concert Information displayed on right side of screen-->
     <!-- <div id="concert-display" class="col s7">
