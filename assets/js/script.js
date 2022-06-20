@@ -13,29 +13,36 @@ let searchForm = document.querySelector(".userSearch")
 let buttonHandler = (e) => {
   e.preventDefault();
 
-
-  songSamplesContainer.innerHTML = "";
+  // songSamplesContainer.innerHTML = "";
   let city = cityInput.value;
   let genre = genreInput.value;
 
-  
+
   //error handling
-    if (!city || !genre) {
+  if (!city || !genre) {
+
     // modal code 
-    console.log("error");
-   
-      
-      var elems = document.querySelector('.modal');
-      console.log(elems);
-      // const instance = M.Modal.init(elems);
-      // open the modal
-      // instance.open();
-      return;
- 
-    } else {
+    var elems = document.querySelector('.modal');
+    const instance = M.Modal.init(elems);
+
+    // open the modal
+    instance.open();
+    return;
+
+    // event listener button to close instance
+    let closeHandler = document.querySelector(".modal-close");
+    closeHandler.addEventListener("click", function () {
+      instance.close();
+    })
+
+
+
+
+
+  } else {
     getEventByCityAndGenre(city, genre)
-    };
-    
+  };
+
   searchForm.reset();
 
 };
@@ -93,10 +100,6 @@ function getTop3Songs(artist) {
           songListItem = document.createElement('div')
           playbtnEl = document.createElement('button')
 
-          playbtnEl.className = "songButton"
-
-          songSamplesContainer.appendChild(songListItem)
-
           // song title and artist name
           playbtnEl.innerHTML = "Play " + data.tracks.hits[i].track.title + " by " + artist
 
@@ -126,6 +129,19 @@ function getTop3Songs(artist) {
 //display data in new container 
 let displayResults = function (data) {
   console.log(data)
+
+  //display artist name in each container
+  for (i = 0; i < 10; i++) {
+    // band name containers
+    let nameContainer = document.querySelectorAll('#band-name')
+    let otherNameContainer = document.querySelectorAll("#bandName")
+
+    otherNameContainer[i].innerHTML = data[i].name
+    nameContainer[i].innerHTML = data[i].name
+
+    // songSamplesContainer.appendChild(songListItem)
+  }
+
   let city = cityInput.value;
   let genre = genreInput.value;
 
