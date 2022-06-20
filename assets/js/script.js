@@ -18,27 +18,27 @@ let buttonHandler = (e) => {
   let city = cityInput.value;
   let genre = genreInput.value;
 
-  // modal code 
-
-  // document.addEventListener('DOMContentLoaded', function () {
-  //   var elems = document.querySelectorAll('.modal');
-  //   var instances = M.Modal.init(elems);
-
-  //   //error handling
-  //   if (!city || !genre) {
-  //     // open the modal
-  //     instances.open();
-  //     return;
-  //   } else {
-  //     
-  //   }
-
-  // });
-
-  getEventByCityAndGenre(city, genre)
+  
+  //error handling
+    if (!city || !genre) {
+    // modal code 
+    console.log("error");
+   
+      
+      var elems = document.querySelector('.modal');
+      console.log(elems);
+      // const instance = M.Modal.init(elems);
+      // open the modal
+      // instance.open();
+      return;
+ 
+    } else {
+    getEventByCityAndGenre(city, genre)
+    };
+    
   searchForm.reset();
 
-}
+};
 
 
 
@@ -70,7 +70,7 @@ let getEventByCityAndGenre = (city, genre) => {
 
 // create event listener for submit button
 let submitBtn = document.querySelector("#searchBtn")
-submitBtn.addEventListener("click", buttonHandler)
+submitBtn.addEventListener("click", buttonHandler,)
 
 
 
