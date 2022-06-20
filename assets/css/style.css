@@ -65,7 +65,7 @@ input::placeholder {
 }
 
 #sample-display, #band-name {
-    background-color: rgb(44, 22, 44, 0.6);
+    background-color: rgb(44, 22, 44);
 }
 
 #sample-display, .b1 {
@@ -73,7 +73,7 @@ input::placeholder {
     justify-content: space-between;
     margin-top: 3.4%;
     padding-right: 8px;
-    
+    background-color: rgb(44, 22, 44, 0.6);
 }
-/* Chad's Code */
+
 
