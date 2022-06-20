@@ -1,10 +1,13 @@
 Using framework materialize
 .home-title {
-    background-color: #4a148c;
+    background-color: rgb(44, 22, 44);
+    padding-left: 10px;
+    border: 2px solid rgb(44, 22, 44);
 }
 
 #home {
     margin: 0;
+    padding: 10px 0 10px 5px;
 }
 
 body {
@@ -16,13 +19,16 @@ body {
     
 }
 
-#pick-city {
-    
+/* Search Area */ 
+#pick-city, #genre-pick {
     margin-top: 4px;
 }
 
-#genre-pick {
-    margin-top: 4px;
+#searchbtn {
+    background-color: rgb(44, 22, 44);
+    padding:20px;
+    font-size: 24px;
+    border-radius: 5px;
 }
 
 #search-bar {
@@ -35,20 +41,37 @@ input::placeholder {
 }
 
 #search-btn {
-    margin-top: 75px;
+    margin-top: 72px;
     display: inline-block;
     justify-content: center;
-    
 }
 
-#search-area {
+#search-area, #concert-display {
     border: 2px solid black;
 }
 
-.sample-title {
-    margin-top: 67px;
+/* Ticket Area */
+
+#purchase-tick, #ticketbtn {
+    margin-left: 45%;
 }
 
 .songButton {
     margin: 5px ;
+}
+
+#song-display {
+    border: 2px solid black;
+}
+
+#sample-display, #band-name {
+    background-color: rgb(44, 22, 44);
+}
+
+#sample-display, .b1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.4%;
+    padding-right: 8px;
+    background-color: rgb(44, 22, 44, 0.6);
 }
