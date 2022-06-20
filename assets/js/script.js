@@ -27,24 +27,16 @@ let buttonHandler = (e) => {
 
     // open the modal
     instance.open();
-    return;
 
     // event listener button to close instance
     let closeHandler = document.querySelector(".modal-close");
     closeHandler.addEventListener("click", function () {
       instance.close();
     })
-
-
-
-
-
   } else {
     getEventByCityAndGenre(city, genre)
   };
-
   searchForm.reset();
-
 };
 
 
@@ -127,37 +119,41 @@ function getTop3Songs(artist) {
 };
 
 //display data in new container 
-let displayResults = function (data) {
+let displayResults = function (data) { //fuction name is differnt
   console.log(data)
 
-  //display artist name in each container
-  for (i = 0; i < 10; i++) {
-    // band name containers
-    let nameContainer = document.querySelectorAll('#band-name')
-    let otherNameContainer = document.querySelectorAll("#bandName")
+  // for (i = 0; i < 10; i++) {
+  //   // band name containers
+  //   // let nameContainer = document.querySelectorAll('#band-name')
+  //   // let otherNameContainer = document.querySelectorAll("#bandName")
 
-    otherNameContainer[i].innerHTML = data[i].name
-    nameContainer[i].innerHTML = data[i].name
+  //   // otherNameContainer[i].innerHTML = data[i].name
+  //   // nameContainer[i].innerHTML = data[i].name
 
-    // songSamplesContainer.appendChild(songListItem)
-  }
+  //   // songSamplesContainer.appendChild(songListItem)
+  // }
 
-  let city = cityInput.value;
-  let genre = genreInput.value;
-
+  //grab city and genre from data
+  // let city = cityInput.value;
+  // let genre = genreInput.value;
+  let songDisplay = document.querySelector("#result-section");
+ 
   //create container parent
+
   let resultEl = document.createElement('div');
-  resultEl.id = "resultEl";
-  let resultTitle = document.createElement("h2"); //will this actually be a span element?
-  resultTitle.textContent = genre + " Concerts in " + city;
+  resultEl.id = "concert-display";
+  resultEl.setAttribute('class', 'col s7')
+  let resultTitle = document.createElement("h3"); 
+  resultTitle.id = "ticket-title"
+  resultTitle.setAttribute('class', 'center' )
+  resultTitle.textContent = (genre + " Concerts in " + city);
   resultEl.appendChild(resultTitle);
 
-  function getArtistSongs(numArtists) {
+  function getArtistInfo(numArtists) { 
     let i = 0;
-
+    
     const maximum = setInterval(() => {
       //band name
-
       let bandName = data[i].name;
       console.log(bandName)
       // venue
@@ -167,29 +163,33 @@ let displayResults = function (data) {
       // time 
       let time = data[i].dates.start.localTime;
 
-      // add list to container
-      // band name list
-      // event info list items
-
       // container for bane name and info 
       let eventEl = document.createElement('div');
-      eventEl.id = "eventEl";
+      eventEl.id = "tour-ticket-info";
       let eventTitleEl = document.createElement('div');
-      eventTitleEl.id = "event-title-el";
-      let eventTitle = document.createElement('h3');
+      eventTitleEl.id = "tour-info";
+      let eventTitle = document.createElement('h4');
+      eventTitle.id = "bandName"
+      eventTitle.setAttribute('class', 'center-align amber-text text-darken-1' )
       eventTitle.textContent = bandName + " at " + venue + " " + date + " " + time;
 
-      //container for buttons
-      let btnContainer = document.createElement('div');  //or should this be a list?
-      btnContainer.id = "btn-container";
+      //ticket url
+      let ticketBtnEl = document.createElement("button");
+      ticketBtnEl.type = "submit";
+      ticketBtnEl.id = "ticketbtn";
+      ticketBtnEl.setAttribute('class', 'btn ticket-btn2 blue-text text-lighten-5');
+      ticketBtnEl.textContent = "Purchase Tickets";
+      ticketBtnEl.innerHTML = ('<a href=' + data[i].url + '>Purchase Tickets</a>');
 
       //call 3 play btns
       getTop3Songs(bandName);
+
       //append elements
       eventTitleEl.append(eventTitle);
       eventEl.append(eventTitleEl);
-      eventEl.append(btnContainer);
+      eventEl.append(ticketBtnEl);
       resultEl.append(eventEl);
+      songDisplay.append(resultEl);
 
       i++;
 
@@ -197,9 +197,7 @@ let displayResults = function (data) {
     }, 1500)
   }
 
-  getArtistSongs(5);
-
-  // //ticket url
+  getArtistInfo(10);
 
 };
 
