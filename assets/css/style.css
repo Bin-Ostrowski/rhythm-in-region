@@ -75,3 +75,7 @@ input::placeholder {
     padding-right: 8px;
     background-color: rgb(44, 22, 44, 0.6);
 }
+
+.songBtn {
+    display: inline-block;
+}

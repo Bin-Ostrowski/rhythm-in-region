@@ -83,13 +83,23 @@ function getTop3Songs(artist) {
   fetch(apiUrl).then(function (response) {
     response.json().then(function (data) {
       if (response.ok) {
+        // go through each artist and get 3 songs
         for (i = 0; i < 3; i++) {
 
-          //displays track name and url
           console.log(data.tracks)
-
           console.log(data.tracks.hits[i].track.title + " " + data.tracks.hits[i].track.url)
 
+          // select all play song buttons
+          let sampleSongBtn = document.querySelectorAll(".songBtn");
+          let trackTitle = data.tracks.hits[i].track.title;
+          let trackURL = data.tracks.hits[i].track.url
+
+          // go through each playsong button
+          for (i=0; i<15; i++) {
+            sampleSongBtn[i].textContent = trackTitle;
+            sampleSongBtn[i].innerHTML = '<a href=' + trackURL + '>' + trackTitle + '</a>'
+          };
+          
         };
       } else {
         throw Error(response.statusText)
@@ -179,9 +189,15 @@ let displayResults = function (data) { //function name is differnt
       sampleBandName.textContent = bandName;
 
       // song buttons
-      let sampleBtn = document.createElement('button');
-      sampleBtn.setAttribute('class', 'b1 btn playsongbtn1 col pink-text text-lighten-5');
-      sampleBtn.innerHTML = ('song URL');
+      let sampleBtn1 = document.createElement('button');
+      sampleBtn1.setAttribute('class', 'b1 songBtn btn playsongbtn1 col pink-text text-lighten-5');
+
+      let sampleBtn2 = document.createElement('button');
+      sampleBtn2.setAttribute('class', 'b2 songBtn btn playsongbtn2 col pink-text text-lighten-5');
+
+      let sampleBtn3 = document.createElement('button');
+      sampleBtn3.setAttribute('class', 'b3  songBtn btn playsongbtn3 col pink-text text-lighten-5');
+
 
       // append band container to parent container 
       sampleResultEl.append(sampleBandDisplayContainer);
@@ -190,7 +206,9 @@ let displayResults = function (data) { //function name is differnt
       sampleBandDisplayContainer.append(sampleBandName);
 
       // append button to parent container
-      sampleBandDisplayContainer.append(sampleBtn);
+      sampleBandDisplayContainer.append(sampleBtn1);
+      sampleBandDisplayContainer.append(sampleBtn2);
+      sampleBandDisplayContainer.append(sampleBtn3);
 
 
       //ticket url
@@ -218,7 +236,7 @@ let displayResults = function (data) { //function name is differnt
     }, 1500)
   }
 
-  getArtistInfo(10);
+  getArtistInfo(3);
 
 };
 
