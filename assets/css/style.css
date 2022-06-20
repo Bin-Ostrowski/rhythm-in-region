@@ -1,4 +1,4 @@
-/* Using framework materialize */
+Using framework materialize
 .home-title {
     background-color: #4a148c;
 }
@@ -49,3 +49,6 @@ input::placeholder {
     margin-top: 67px;
 }
 
+.songButton {
+    margin: 5px ;
+}
