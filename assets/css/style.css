@@ -58,23 +58,6 @@ input::placeholder {
 
 
 
-/* Song Sample Area */
-
-#song-display {
-    border: 2px solid black;
-}
-
-#sample-display, #band-name {
-    background-color: rgb(44, 22, 44);
-}
-
-#sample-display, .b1 {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3.4%;
-    padding-right: 8px;
-    background-color: rgb(44, 22, 44, 0.6);
-}
 
 .songButton {
     margin: 5px ;
