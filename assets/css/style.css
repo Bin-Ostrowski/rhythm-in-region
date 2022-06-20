@@ -52,13 +52,28 @@ input::placeholder {
 
 /* Ticket Area */
 
-#ticket-title {
-    padding-top: 67px;
+#purchase-tick, #ticketbtn {
+    margin-left: 45%;
 }
+
+
 
 /* Song Sample Area */
 
 #song-display {
     border: 2px solid black;
 }
+
+#sample-display, #band-name {
+    background-color: rgb(44, 22, 44, 0.6);
+}
+
+#sample-display, .b1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.4%;
+    padding-right: 8px;
+    
+}
+/* Chad's Code */
 
