@@ -76,4 +76,6 @@ input::placeholder {
     background-color: rgb(44, 22, 44, 0.6);
 }
 
-
+.songButton {
+    margin: 5px ;
+}
