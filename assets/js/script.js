@@ -7,9 +7,18 @@ let cityInput = document.querySelector(".searchCity");
 let songSamplesContainer = document.querySelector(".sample-songs")
 let searchForm = document.querySelector(".userSearch");
 
+let sampleResultEl = document.createElement('div');
+let resultEl = document.createElement('div');
+
 // take in the value of genre and city as parameters for getEventByCityAndGenre
 let buttonHandler = (e) => {
+  // clear concert and song display containers 
+  resultEl.innerHTML = "";
+  sampleResultEl.innerHTML = "";
+
+
   e.preventDefault();
+
 
   let city = cityInput.value;
   let genre = genreInput.value;
@@ -34,31 +43,46 @@ let buttonHandler = (e) => {
   };
 };
 
-//search by city API
+//search by cityAPI
 let getEventByCityAndGenre = (city, genre) => {
 
   let APIKey = "&apikey=MYfmJhBCLx9HATehV1SabFFOewAaaLjb"
-  let APIUrl = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&classificationName=" + genre + "&size=10&city=" + city + APIKey
+  let APIUrl = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&sort=date,asc&classificationName=" + genre + "&size=10&city=" + city + APIKey
 
   // grab events info for portland - pass in genera paramater (find by data.classifications.genre.name) 
   fetch(APIUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
         displayResults(data._embedded.events);
+
+      }).catch((error) => {
+        // modal code 
+        var elems = document.querySelector('#modal3');
+        const instance = M.Modal.init(elems);
+
+        // open the modal
+        instance.open();
+
+        // event listener button to close instance
+        let closeHandler = document.querySelector(".modal-close");
+        closeHandler.addEventListener("click", function () {
+          instance.close();
+        })
+
+        searchForm.reset();
       })
+
     } else {
       throw Error(response.statusText)
-    };
+      //
+    }
 
-  }).catch((error) => {
-    alert("Type in a valid city and genre")
-    // do something with the songs
   })
 };
 
 // create event listener for submit button
 let submitBtn = document.querySelector("#searchBtn")
-submitBtn.addEventListener("click", buttonHandler, )
+submitBtn.addEventListener("click", buttonHandler,)
 
 // SHAZAAM API, fetch by artist name, list top 3 songs
 // for artists with more than one word in name, delete spaces (join characters)
@@ -78,6 +102,7 @@ function getTop3Songs(artist, sampleBandDisplayContainer) {
       // song buttons
       let anchor = document.createElement('a')
       anchor.setAttribute('href', trackURL)
+      anchor.setAttribute('target', '_blank')
 
       let sampleBtn1 = document.createElement('button');
       sampleBtn1.setAttribute('class', 'b1 songBtn btn playsongbtn1 col pink-text text-lighten-5');
@@ -86,7 +111,7 @@ function getTop3Songs(artist, sampleBandDisplayContainer) {
       anchor.append(sampleBtn1)
 
       sampleBandDisplayContainer.append(anchor);
-     
+
 
       console.log(data.tracks.hits[j])
 
@@ -103,31 +128,33 @@ function getTop3Songs(artist, sampleBandDisplayContainer) {
 
 //display data in new container 
 let displayResults = function (data) { //function name is differnt
+
+
   // console.log(data)
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-};
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
 
   //grab city and genre from data
   let genre = capitalizeFirstLetter(genreInput.value);
   let city = capitalizeFirstLetter(cityInput.value);
   let songDisplay = document.querySelector("#result-section");
-  
-  
+
+
   //create event info parent container
-  let resultEl = document.createElement('div');
+
   resultEl.id = "concert-display";
   resultEl.setAttribute('class', 'col s7');
   let resultTitle = document.createElement("h3");
   resultTitle.id = "ticket-title";
   resultTitle.setAttribute('class', 'center')
-  resultTitle.textContent = genre + " Concerts in " + city;
+  resultTitle.textContent = genre + " concerts in " + city
+    ;
   resultEl.appendChild(resultTitle);
 
   // create song sample parent container
-  let sampleResultEl = document.createElement('div');
   sampleResultEl.setAttribute('class', 'col s5');
   sampleResultEl.id = "song-display";
   songDisplay.append(sampleResultEl);
@@ -140,12 +167,12 @@ function capitalizeFirstLetter(string) {
 
   //clear searched city and genera
   searchForm.reset();
-  
+
   getArtistInfo(3, data, sampleResultEl, resultEl, songDisplay);
-  
+
 };
 
-function getArtistInfo(numArtists, data, sampleResultEl,resultEl, songDisplay) {
+function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) {
   let i = 0;
 
   //delay fetch by 1 1/2 seconds
@@ -162,8 +189,18 @@ function getArtistInfo(numArtists, data, sampleResultEl,resultEl, songDisplay) {
     // date format DD-MM-YYYY
     date = date.split("-");
     date = date[1] + "/" + date[2] + "/" + date[0]
- 
-    
+
+    // time format 00:00 AM/PM
+    time = time.split(":");
+
+    let timeOfDay = "";
+    if (time[0] <= 11) {
+      timeOfDay = "AM"
+    } else {
+      timeOfDay = "PM"
+    }
+
+    time = time[0] % 12 + ":" + time[1] + timeOfDay;
 
     // container for band name and info 
     let eventEl = document.createElement('div');
@@ -196,14 +233,15 @@ function getArtistInfo(numArtists, data, sampleResultEl,resultEl, songDisplay) {
     //ticket url
     let anchor = document.createElement('a');
     anchor.setAttribute('href', data[i].url);
-    
+    anchor.setAttribute('target', '_blank')
+
     let ticketBtnEl = document.createElement("button");
     ticketBtnEl.type = "submit";
     ticketBtnEl.id = "ticketbtn";
     ticketBtnEl.setAttribute('class', 'btn center ticket-btn2 white-text text-lighten-5');
     ticketBtnEl.textContent = "Purchase Tickets";
     anchor.append(ticketBtnEl);
-    
+
 
 
     //call 3 play btns

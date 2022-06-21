@@ -66,6 +66,7 @@ input::placeholder {
 
 #sample-display, #band-name, #bandName {
     background-color: rgb(44, 22, 44);
+    padding: 3px;
 }
 
 #sample-display, .b1 {
