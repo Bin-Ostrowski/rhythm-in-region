@@ -1,13 +1,11 @@
 Using framework materialize
-.home-title {
+
+.home-title, #home {
+    margin: 0;
+    padding: 10px 0 10px 5px;
     background-color: rgb(44, 22, 44);
     padding-left: 10px;
     border: 2px solid rgb(44, 22, 44);
-}
-
-#home {
-    margin: 0;
-    padding: 10px 0 10px 5px;
 }
 
 body {
@@ -24,11 +22,13 @@ body {
     margin-top: 4px;
 }
 
-#searchbtn {
+#searchBtn {
     background-color: rgb(44, 22, 44);
-    padding:20px;
-    font-size: 24px;
+    font-size: 20px;
     border-radius: 5px;
+    display: inline-flex;
+    text-align: center;
+    white-space: nowrap;
 }
 
 #search-bar {
@@ -41,7 +41,7 @@ input::placeholder {
 }
 
 #search-btn {
-    margin-top: 72px;
+    margin-top: 8%;
     display: inline-block;
     justify-content: center;
 }
@@ -69,9 +69,22 @@ input::placeholder {
 }
 
 #sample-display, .b1 {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     margin-top: 3.4%;
-    padding-right: 8px;
+    padding-right: 10px;
     background-color: rgb(44, 22, 44, 0.6);
+    padding: 10px;
+   
+}
+
+#song-display #sample-display .b1 {
+    background-color: rgb(44, 22, 44);
+    display: inline-flex;
+    white-space: nowrap;
+    justify-items: flex-end;
+}
+
+#sample-display h4, .b1 {
+    margin-right: 10px;
 }
