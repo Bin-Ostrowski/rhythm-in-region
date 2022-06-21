@@ -48,6 +48,7 @@ input::placeholder {
 
 #search-area {
     margin-top: 10px;
+    background-color: rgb(44, 22, 44, 0.2);
 } 
 
 /* Ticket Area */
@@ -60,9 +61,9 @@ input::placeholder {
     margin: 5px ;
 }
 
-#song-display, #search-area, #concert-display { 
-    background-color: rgb(44, 22, 44, 0.3);
-} 
+#concert-display, #song-display {
+    background-color: rgb(44, 22, 44, 0.5);
+}
 
 #sample-display, #band-name, #bandName {
     background-color: rgb(44, 22, 44);
