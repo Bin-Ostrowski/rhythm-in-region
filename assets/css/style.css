@@ -46,9 +46,9 @@ input::placeholder {
     justify-content: center;
 }
 
-#search-area, #concert-display {
-    border: 2px solid black;
-}
+#search-area {
+    margin-top: 10px;
+} 
 
 /* Ticket Area */
 
@@ -60,9 +60,9 @@ input::placeholder {
     margin: 5px ;
 }
 
-#song-display {
-    border: 2px solid black;
-}
+#song-display, #search-area, #concert-display { 
+    background-color: rgb(44, 22, 44, 0.3);
+} 
 
 #sample-display, #band-name, #bandName {
     background-color: rgb(44, 22, 44);
