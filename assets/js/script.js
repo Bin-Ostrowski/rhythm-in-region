@@ -11,7 +11,6 @@ let searchForm = document.querySelector(".userSearch");
 let buttonHandler = (e) => {
   e.preventDefault();
 
-  // songSamplesContainer.innerHTML = "";
   let city = cityInput.value;
   let genre = genreInput.value;
 
@@ -159,6 +158,12 @@ function getArtistInfo(numArtists, data, sampleResultEl,resultEl, songDisplay) {
     let date = data[i].dates.start.localDate;
     // time 
     let time = data[i].dates.start.localTime;
+
+    // date format DD-MM-YYYY
+    date = date.split("-");
+    date = date[1] + "/" + date[2] + "/" + date[0]
+ 
+    
 
     // container for band name and info 
     let eventEl = document.createElement('div');
