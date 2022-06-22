@@ -66,6 +66,7 @@ input::placeholder {
 
 #sample-display, #band-name, #bandName {
     background-color: rgb(44, 22, 44);
+    padding: 3px;
 }
 
 #sample-display, .b1 {
@@ -74,4 +75,8 @@ input::placeholder {
     margin-top: 3.4%;
     padding-right: 8px;
     background-color: rgb(44, 22, 44, 0.6);
+}
+
+.songBtn {
+    display: inline-block;
 }
