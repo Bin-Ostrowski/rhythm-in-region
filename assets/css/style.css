@@ -77,7 +77,7 @@ body {
     font-size: clamp(23px, 4vw, 45px);
 }
 
-.header-h4-2 {
+.header-h4-2 {background: rgb(45, 31, 57);
     /* position: relative; */
     /* top: 0.5vh; */
     font-size: clamp(23px, 4vw, 45px);

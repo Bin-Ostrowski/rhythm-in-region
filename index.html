@@ -50,7 +50,7 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!--CSS link-->
-  <link rel="stylesheet" href="./stylecombined.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -68,68 +68,89 @@
 
             <span id="listed-band-info" style="display:flex;align-items:center;justify-content:center"></span>
             <div class="button-header container"
-              style="    position: relative;
+              style=" min-height: 298px; ;
        top: 3vh;max-width: 662px; display: flex; justify-content: center; align-items:center; min-width: 100%; text-align:center; ">
-              <h4 class="header-h4-1 amber-text text-darken-1" style="font-size: clamp(23px, 4vw, 45px);">{BAND NAME} AT
+              <h4 class="header-h4-1 amber-text text-darken-1" style="font-size: clamp(36px,4.9vw, 45px);">{BAND NAME} AT
                 {VENUE}{}DATE{TIME}
                 <!-- row -->
                 <div id="button-header1" class="card-action"
-                  style="position: relative; min-width: 85%; min-height: 400px; columns: 2; columns: auto auto; display:flex;">
+                  style="grid-template-columns: repeat(2, 1fr);
+                  display: grid;     min-height: 365px;
+    min-width: 95%;
+    text-align: center;
+    grid-gap: 10px;
+    margin: 0 auto;">
 
 
-                  <button type="button" class="btn playsongbtn1  pink-text text-lighten-5" style="    position: absolute;
-        top: 7vh; left: 2vw; min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGN
+                  <button type="button" class="btn playsongbtn1  pink-text text-lighten-5" style="    align-self: end;
+                  justify-self: end;min-height: 92px; 
+                  min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGNNAME)</button>
+
+                  <button type="button" class="btn playsongbtn2 pink-text text-lighten-5" style="align-self: end;
+                  justify-self: left;min-height: 92px; 
+                  min-width: 100px; max-width: 240px; max-height: 114px;">Play(SONGN NAME)
+                  </button>
+
+                  <!-- <div class="second-button-row column" style="min-height: 92px; -->
+
+                  <button type="button" class="btn playsongbtn3 pink-text text-lighten-5" style="    justify-self: end;
+                    align-self: start;min-height: 92px; 
+                    min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG
                     NAME)</button>
-                  <button type="button" class="btn playsongbtn2 pink-text text-lighten-5" style=" left: 28vw;
-        top: 6.6vh;position: absolute; min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play
-                    (SONGN NAME)</button>
 
-
-                  <div class="second-button-row column" style="columns: 2; columns: auto auto; display:flex;">
-                    <button type="button" class="btn playsongbtn3 pink-text text-lighten-5" style="    position: absolute;
-        top: 19vh; left: 2.4vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG
-                      NAME)</button>
-                    <button type="button" class="btn ticket-btn1  offset-m6 blue-text text-lighten-5" style="position: absolute;
-        top: 19vh; left: 28vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">PURCHASE
-                      TICKETS</button>
-                  </div>
+                  <button type="button" class="btn ticket-btn1 blue-text text-lighten-5" style="justify-self: start;
+                    align-self: start;min-height: 92px; 
+                    min-width: 100px; max-width: 240px; max-height: 114px;">PURCHASE
+                    TICKETS</button>
                 </div>
             </div>
-          </section>
+        </div>
+    </section>
 
 
-          <section class="bottom-portion" style="text-align: center;">
-            <div class="band-info-container2 container row">
-              <!-- Add buton functionality bones -->
-              <div class="band-info-container-bottom row">
+    <section class="bottom-portion">
+      <div class="band-info-container2  row">
+        <!-- Add buton functionality bones -->
 
-                <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
 
-                <span id="listed-band-info-bottom" style="    position: relative;
+        <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
+
+        <span id="listed-band-info-bottom" style="display:flex"></span>
+        <!-- <div class="button-header-container card-action row"
+                  style=" min-height: 298px;justify-content:center; align-items:center; min-width: 100%; text-align:center; "> -->
+        <h4 class="header-h4-2 amber-text text-darken-1" style="font-size: clamp(36px,4.9vw, 45px);min-width: 90%;
+        max-width: 90%;
+        align-content: center;
+        text-align: center;
+        position: relative;
         top: 1vh;
-        left: 10vw;display:flex;align-items:center;justify-content:center"></span>
+        left: 4vw;;">{BAND NAME} AT {VENUE}{}DATE{TIME}
+          <div class="band-info-container-bottom row"
+            style="grid-template-columns: repeat(2, 1fr);
+                    display: grid; min-height: 365px;    min-width: 95%;text-align: center;grid-gap: 10px; margin: 0 auto;">
+            <!-- <div id="button-header2" class="button-form2 card-action row" > -->
 
-                <div class="button-header-container container card large card-action row"
-                  style=" justify-content:center; align-items:center; min-width: 100%; text-align:center; ">
-                  <h4 class="header-h4-2 amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME}
+            <button type="button" class="btn playsongbtn4  pink-text text-lighten-5" style="align-self: end;        justify-self: end;
+                    min-height: 92px;min-width: 100px; max-width: 240px;max-height: 114px;;">Play (SONGN NAME)</button>
 
-                    <!-- <div id="button-header2" class="button-form2 card-action row" > -->
+            <button type="button" class="btn playsongbtn5  pink-text text-lighten-5" style="min-height: 92px;
+                    min-width: 100px;max-width: 240px;max-height: 114px; align-self: end;justify-self: left;">Play
+              (SONG NAME)</button>
 
-                    <button type="button" class="btn playsongbtn4  pink-text text-lighten-5" style="    position: absolute;
-       top: 13vh; left: 5vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGN NAME)</button>
-                    <button type="button" class="btn playsongbtn5  pink-text text-lighten-5" style="position: absolute;
-        top: 13vh; left: 22vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG NAME)</button>
 
-                    <div class="second-button-row-bottom card-action row">
-                      <button type="button" class="btn playsongbtn6 pink-text text-lighten-5" style="    position: absolute;
-        top: -14vh; left: 6vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG NAME)</button>
-                      <button type="button" class="btn ticket-btn2 blue-text text-lighten-5" style="    position: absolute;
-        top: -14vh; left: 26vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">PURCHASE TICKETS</button>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            <button type="button" class="btn playsongbtn6 pink-text text-lighten-5" style="min-height: 92px;
+                      min-width: 100px;max-width: 240px; max-height: 114px;justify-self: end; align-self: start;">Play
+              (SONG NAME)</button>
+
+            <button type="button" class="btn ticket-btn2 blue-text text-lighten-5" style="justify-self: start;
+                      align-self: start;min-height: 92px;
+                      min-width: 100px;                      max-width: 240px;
+                      max-height: 114px;">PURCHASE TICKETS</button>
+          </div>
+      </div>
+  </div>
+  </div>
+  </section>
 
 
 </body>
