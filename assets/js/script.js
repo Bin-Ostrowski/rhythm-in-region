@@ -164,7 +164,7 @@ let displayResults = function (data) { //function name is differnt
   songDisplay.append(sampleResultEl);
 
   // song sample title
-  let sampleResultTitle = document.createElement('h3');
+  let sampleResultTitle = document.createElement('h4');
   sampleResultTitle.textContent = "Available Songs by Artists";
   sampleResultTitle.setAttribute('class', 'center');
   sampleResultEl.append(sampleResultTitle);
@@ -232,9 +232,12 @@ function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) 
 
     // song samples for band
     let sampleBandName = document.createElement('h4');
+    
+    
     sampleBandName.setAttribute('class', 'center-align amber-text text-darken-1')
     sampleBandName.setAttribute('id', 'bandName')
     sampleBandName.textContent = bandName;
+  
 
     // append band container to parent container 
     sampleResultEl.append(sampleBandDisplayContainer);
