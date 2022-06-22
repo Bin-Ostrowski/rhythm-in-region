@@ -9,6 +9,7 @@ When user searches for a music genre by city, they are presented with:
 
 ## Preview
 
-{screenshot}
+![RhythmInRegionScreenshot](https://user-images.githubusercontent.com/102554319/175172552-35a9fb1b-6090-4ef6-83b3-b7fdaf888776.png)
+
 
 ## Deploy application
