@@ -47,12 +47,14 @@ let buttonHandler = (e) => {
 let getEventByCityAndGenre = (city, genre) => {
 
   let APIKey = "&apikey=MYfmJhBCLx9HATehV1SabFFOewAaaLjb"
-  let APIUrl = "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&sort=date,asc&classificationName=" + genre + "&size=10&city=" + city + APIKey
+  let APIUrl = "https://app.ticketmaster.com/discovery/v2/events.json?sort=date,asc&classificationName=" + genre + "&size=10&city=" + city + APIKey
 
   // grab events info for portland - pass in genera paramater (find by data.classifications.genre.name) 
   fetch(APIUrl).then(function (response) {
     if (response.ok) {
+      
       response.json().then(function (data) {
+      
         displayResults(data._embedded.events);
 
       }).catch((error) => {
