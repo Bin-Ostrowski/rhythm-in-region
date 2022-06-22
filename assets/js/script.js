@@ -150,7 +150,7 @@ let displayResults = function (data) { //function name is differnt
   //create event info parent container
 
   resultEl.id = "concert-display";
-  resultEl.setAttribute('class', 'col s12 m12  l7');
+  resultEl.setAttribute('class', 'col s12 m12 l7');
   let resultTitle = document.createElement("h3");
   resultTitle.id = "ticket-title";
   resultTitle.setAttribute('class', 'center')
@@ -211,19 +211,13 @@ function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) 
     eventEl.id = "tour-ticket-info";
     let eventTitleEl = document.createElement('div');
     eventTitleEl.id = "tour-info";
-    eventTitleEl.setAttribute('class', 'tourInfo')
+    eventTitleEl.setAttribute('class', 'tourInfo');
 
     //search result title
     let eventTitle = document.createElement('h4');
     eventTitle.id = "bandName"
     eventTitle.setAttribute('class', 'title center-align amber-text text-darken-1')
-    eventTitle.textContent = bandName  + " at " + venue + " " + date + " " + time;
-
-    // let venueName = document.createElement('');
-    // venueName.textContent = venue;
-
-
-    
+    eventTitle.textContent = bandName + " at " + venue + " " + date + " " + time;
 
     // parent container for each band 
     let sampleBandDisplayContainer = document.createElement('div');
@@ -252,9 +246,9 @@ function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) 
     anchor.setAttribute('class', '')
 
     let ticketBtnEl = document.createElement("div");
-    ticketBtnEl.type = "submit";
+    //ticketBtnEl.type = "submit";
     ticketBtnEl.id = "ticketbtn";
-    ticketBtnEl.setAttribute('class', 'ticketBtn center ticket-btn2 white-text text-lighten-5 tertiary-background ');
+    ticketBtnEl.setAttribute('class', 'ticketBtn center ticket-btn2 white-text text-lighten-5');
     ticketBtnEl.textContent = "Purchase Tickets";
     anchor.append(ticketBtnEl);
 

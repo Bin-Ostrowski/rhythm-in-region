@@ -26,22 +26,23 @@
 
 <body>
   <section class="row" id="search">
+    <div class="s12 m4 l1"></div>
     <form class="userSearch">
       <!--Search Area (Top Left)-->
       <div id="search-area" class="col s12 m4 l10">
-        <div id="genre-pick" class="col s12 m4 l4 xl4">
-          <h5 class="">Pick a Genre:</h5>
-          <input type="text" name="genreSearch" id="search-bar" class="col  m8 l8  searchGenre"
-            placeholder="  Genre">
+        <div id="genre-pick" class="col s8 m4 l4">
+          <h4 class="">Pick a Genre:</h4>
+          <input type="text" name="genreSearch" id="search-bar" class="col s8 searchGenre"
+            placeholder="Search Genre...">
         </div>
-        <div id="pick-city" class="col s12 m4 l4 xl4">
-          <h5 id="city-search" class="">Search By City:</h5>
-          <input type="text" name="citySearch" id="search-bar" class="col s10 m8 l8 searchCity" placeholder="  City">
+        <div id="pick-city" class="col s12 m4 l5">
+          <h4 id="city-search" class="">Search By City:</h4>
+          <input type="text" name="citySearch" id="search-bar" class="col s9 searchCity" placeholder="Search City...">
         </div>
-        <div id="search-btn" class="col m4 l4 bottom">
+        <div id="search-btn" class="col s8 m4 l3 ">
           <!--MODAL trigger-->
-          <div data-target="modal1" type="submit" id="searchBtn"
-            class="col s12  modal-trigger btn-large amber-text text-darken-1">
+          <button data-target="modal1" type="submit" id="searchBtn"
+            class="right btn modal-trigger btn-large amber-text text-darken-1">
             Find A Concert
         </div>
           <!--MODAL structure-->
@@ -77,6 +78,7 @@
           </div>
         </div>
       </div>
+      <div class="s12 m4 l"></div>
     </form>
   </section>
   <section id="result-section" class="row">

@@ -11,7 +11,6 @@ Using framework materialize
 body {
     background-image: url(../images/background-image1.png);
     height: 100vh;
-  
     background-size: cover;
     background-repeat: no-repeat;   
 }
@@ -27,7 +26,7 @@ body {
 
 #searchBtn {
     background-color: rgb(44, 22, 44);
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 5px;
     display: inline-flex;
     text-align: center;
@@ -68,15 +67,14 @@ input::placeholder {
 /* Ticket Area */
 /* ticket button */
 
-.tertiary-background {
 
-    border-radius: 5px;
-    background-color: rgb(1, 190, 138);
+.songButton {
+    margin: 5px ;
 }
 
 #concert-display, #song-display {
-    background-color: rgb(44, 22, 44, 0.5)
-} 
+    background-color: rgb(44, 22, 44, 0.5);
+}
 
 #sample-display, #band-name, #bandName {
     background-color: rgb(44, 22, 44);
@@ -109,19 +107,14 @@ input::placeholder {
 
 #bandName {
     display: inline-block;
-   
     text-align: center;
 }
-
-.container {
-    object-position: center;
-}
-
-.tourInfo {
+#tour-info {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .title {
@@ -136,4 +129,20 @@ a {
 div {
     list-style: none;
     margin-bottom: 10px;
+}
+
+.ticketBtn {
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(44, 22, 44);
+    border-radius: 5px;
+    display:inline-flex;
+    justify-content: center;
+    margin-left: 30%;
+    padding: 10px;
+}
+
+#song-display, #sample-display {
+    display: flex;
+    flex-wrap: wrap;
 }
