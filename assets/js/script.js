@@ -90,7 +90,7 @@ submitBtn.addEventListener("click", buttonHandler,)
 // SHAZAAM API, fetch by artist name, list top 3 songs
 // for artists with more than one word in name, delete spaces (join characters)
 function getTop3Songs(artist, sampleBandDisplayContainer) {
-  let apiKey = '&rapidapi-key=044b41251bmsh4f3163657b0933dp1a40e7jsn6430542ca2b5'
+  let apiKey = '&rapidapi-key=11c30692e1msh57611709d774df9p195ee6jsnc4f9f74a0aea'
   let apiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5' + apiKey;
 
   fetch(apiUrl).then(function (response) {
