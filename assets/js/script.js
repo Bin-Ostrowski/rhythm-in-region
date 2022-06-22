@@ -37,6 +37,7 @@ let buttonHandler = (e) => {
     let closeHandler = document.querySelector(".modal-close");
     closeHandler.addEventListener("click", function () {
       instance.close();
+      location.reload();
     })
   } else {
     getEventByCityAndGenre(city, genre)
