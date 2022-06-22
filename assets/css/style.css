@@ -1,22 +1,23 @@
 Using framework materialize
-.home-title {
+
+.home-title, #home {
+    margin: 0;
+    padding: 10px 0 10px 5px;
     background-color: rgb(44, 22, 44);
     padding-left: 10px;
     border: 2px solid rgb(44, 22, 44);
 }
 
-#home {
-    margin: 0;
-    padding: 10px 0 10px 5px;
-}
-
 body {
     background-image: url(../images/background-image1.png);
     height: 100vh;
-    width: 100vw;
+  
     background-size: cover;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;   
+}
+
+#display-title h3, #ticket-title h3 {
+    font-weight: 600;
 }
 
 /* Search Area */ 
@@ -24,11 +25,13 @@ body {
     margin-top: 4px;
 }
 
-#searchbtn {
+#searchBtn {
     background-color: rgb(44, 22, 44);
-    padding:20px;
-    font-size: 24px;
+    font-size: 20px;
     border-radius: 5px;
+    display: inline-flex;
+    text-align: center;
+    white-space: nowrap;
 }
 
 #search-bar {
@@ -41,28 +44,38 @@ input::placeholder {
 }
 
 #search-btn {
-    margin-top: 72px;
+    margin-top: 6%;
     display: inline-block;
     justify-content: center;
 }
 
-#search-area, #concert-display {
-    border: 2px solid black;
+#search-area {
+    margin-top: 20px;
+    background-color: rgb(44, 22, 44, 0.2);
+    width: 120%;
+    padding-bottom: 20px;
+} 
+
+#search {
+    justify-content: center;
+    display: flex;
 }
 
+#city-search {
+    flex-wrap: nowrap;
+}
 /* Ticket Area */
+/* ticket button */
 
-#purchase-tick, #ticketbtn {
-    margin-left: 45%;
+.tertiary-background {
+
+    border-radius: 5px;
+    background-color: rgb(1, 190, 138);
 }
 
-.songButton {
-    margin: 5px ;
-}
-
-#song-display {
-    border: 2px solid black;
-}
+#concert-display, #song-display {
+    background-color: rgb(44, 22, 44, 0.5)
+} 
 
 #sample-display, #band-name, #bandName {
     background-color: rgb(44, 22, 44);
@@ -70,13 +83,56 @@ input::placeholder {
 }
 
 #sample-display, .b1 {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     margin-top: 3.4%;
-    padding-right: 8px;
+    padding-right: 10px;
     background-color: rgb(44, 22, 44, 0.6);
+    padding: 10px;
+   
 }
 
-.songBtn {
+#song-display {
+    padding-bottom: 10px;
+}
+#song-display #sample-display .b1 {
+    background-color: rgb(44, 22, 44);
+    display: inline-flex;
+    white-space: nowrap;
+    justify-items: flex-end;
+}
+
+#sample-display h4, .b1 {
+    margin-right: 10px;
+}
+
+#bandName {
     display: inline-block;
+   
+    text-align: center;
+}
+
+.container {
+    object-position: center;
+}
+
+.tourInfo {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title {
+    width: 100%;
+} 
+
+a {
+    margin-top: 22px;
+    max-height: 40px;
+}
+
+div {
+    list-style: none;
+    margin-bottom: 10px;
 }
