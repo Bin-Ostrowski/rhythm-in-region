@@ -102,13 +102,14 @@ function getTop3Songs(artist, sampleBandDisplayContainer) {
       // let sampleSongBtn = document.querySelectorAll(".songBtn");
       let trackTitle = data.tracks.hits[j].track.title;
       let trackURL = data.tracks.hits[j].track.url
+
       // song buttons
       let anchor = document.createElement('a')
       anchor.setAttribute('href', trackURL)
       anchor.setAttribute('target', '_blank')
 
       let sampleBtn1 = document.createElement('button');
-      sampleBtn1.setAttribute('class', 'b1 songBtn btn playsongbtn1 col pink-text text-lighten-5');
+      sampleBtn1.setAttribute('class', 'b1 btn songBtn playsongbtn1 col pink-text text-lighten-5 ');
       sampleBtn1.textContent = trackTitle;
 
       anchor.append(sampleBtn1)
@@ -163,7 +164,7 @@ let displayResults = function (data) { //function name is differnt
   songDisplay.append(sampleResultEl);
 
   // song sample title
-  let sampleResultTitle = document.createElement('h3');
+  let sampleResultTitle = document.createElement('h4');
   sampleResultTitle.textContent = "Available Songs by Artists";
   sampleResultTitle.setAttribute('class', 'center');
   sampleResultEl.append(sampleResultTitle);
@@ -221,12 +222,16 @@ function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) 
     // parent container for each band 
     let sampleBandDisplayContainer = document.createElement('div');
     sampleBandDisplayContainer.setAttribute('id', 'sample-display');
+    sampleBandDisplayContainer.setAttribute('class', 'tourInfo col s12')
 
     // song samples for band
     let sampleBandName = document.createElement('h4');
+    
+    
     sampleBandName.setAttribute('class', 'center-align amber-text text-darken-1')
     sampleBandName.setAttribute('id', 'bandName')
     sampleBandName.textContent = bandName;
+  
 
     // append band container to parent container 
     sampleResultEl.append(sampleBandDisplayContainer);
@@ -238,6 +243,7 @@ function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) 
     let anchor = document.createElement('a');
     anchor.setAttribute('href', data[i].url);
     anchor.setAttribute('target', '_blank')
+    anchor.setAttribute('class', '')
 
     let ticketBtnEl = document.createElement("div");
     //ticketBtnEl.type = "submit";

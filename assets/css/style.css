@@ -31,6 +31,7 @@ body {
     display: inline-flex;
     text-align: center;
     white-space: nowrap;
+    margin-bottom: 10%;
 }
 
 #search-bar {
@@ -43,7 +44,7 @@ input::placeholder {
 }
 
 #search-btn {
-    margin-top: 8%;
+    margin-top: 6%;
     display: inline-block;
     justify-content: center;
 }
@@ -51,7 +52,8 @@ input::placeholder {
 #search-area {
     margin-top: 20px;
     background-color: rgb(44, 22, 44, 0.2);
-    width: 100%;
+    width: 120%;
+    padding-bottom: 20px;
 } 
 
 #search {
@@ -63,6 +65,7 @@ input::placeholder {
     flex-wrap: nowrap;
 }
 /* Ticket Area */
+/* ticket button */
 
 
 .songButton {
@@ -88,6 +91,9 @@ input::placeholder {
    
 }
 
+#song-display {
+    padding-bottom: 10px;
+}
 #song-display #sample-display .b1 {
     background-color: rgb(44, 22, 44);
     display: inline-flex;
@@ -113,6 +119,16 @@ input::placeholder {
 
 .title {
     width: 100%;
+} 
+
+a {
+    margin-top: 22px;
+    max-height: 40px;
+}
+
+div {
+    list-style: none;
+    margin-bottom: 10px;
 }
 
 .ticketBtn {
