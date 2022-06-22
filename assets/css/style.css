@@ -1,6 +1,7 @@
 Using framework materialize
 
 .home-title, #home {
+    width: 100%;
     margin: 0;
     padding: 10px 0 10px 5px;
     background-color: rgb(44, 22, 44);
@@ -13,12 +14,16 @@ body {
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;   
+    background-attachment: fixed;
 }
 
 #display-title h3, #ticket-title h3 {
     font-weight: 600;
 }
 
+#ticket-title {
+    margin-top: 42px;
+}
 /* Search Area */ 
 #pick-city, #genre-pick {
     margin-top: 4px;
@@ -52,7 +57,7 @@ input::placeholder {
 #search-area {
     margin-top: 20px;
     background-color: rgb(44, 22, 44, 0.2);
-    width: 120%;
+    width: 100%;
     padding-bottom: 20px;
 } 
 
@@ -79,6 +84,7 @@ input::placeholder {
 #sample-display, #band-name, #bandName {
     background-color: rgb(44, 22, 44);
     padding: 3px;
+    margin-top: 5px;
 }
 
 #sample-display, .b1 {
@@ -99,6 +105,10 @@ input::placeholder {
     display: inline-flex;
     white-space: nowrap;
     justify-items: flex-end;
+}
+
+.songBtn {
+    margin-top: 24px;
 }
 
 #sample-display h4, .b1 {
@@ -122,7 +132,6 @@ input::placeholder {
 } 
 
 a {
-    margin-top: 22px;
     max-height: 40px;
 }
 
@@ -142,7 +151,14 @@ div {
     padding: 10px;
 }
 
+.ticketBTN {
+    background-color: rgb(3, 161, 161);
+    border-radius: 5px;
+}
 #song-display, #sample-display {
-    display: flex;
     flex-wrap: wrap;
+}
+
+.songSampleTitle {
+    text-align: center;
 }
