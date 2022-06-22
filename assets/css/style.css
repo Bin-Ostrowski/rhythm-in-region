@@ -11,7 +11,7 @@ Using framework materialize
 body {
     background-image: url(../images/background-image1.png);
     height: 100vh;
-    width: 100vw;
+  
     background-size: cover;
     background-repeat: no-repeat;   
 }
@@ -52,13 +52,19 @@ input::placeholder {
 #search-area {
     margin-top: 20px;
     background-color: rgb(44, 22, 44, 0.2);
+    width: 100%;
 } 
 
+#search {
+    justify-content: center;
+    display: flex;
+}
+
+#city-search {
+    flex-wrap: nowrap;
+}
 /* Ticket Area */
 
-#purchase-tick, #ticketbtn {
-    margin-left: 45%;
-}
 
 .songButton {
     margin: 5px ;
@@ -95,11 +101,21 @@ input::placeholder {
 
 #bandName {
     display: inline-block;
-    margin-left: 23%;
+   
     text-align: center;
 }
 
 .container {
     object-position: center;
-    justify-content:
+}
+
+.tourInfo {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title {
+    width: 100%;
 }
