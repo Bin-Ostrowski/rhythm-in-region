@@ -8,9 +8,9 @@
   <title>Rhythm in Region</title>
 
  Compiled and minified CSS -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   CSS link-->
-  <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+<!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
 
 <!-- </head>
 
@@ -22,9 +22,9 @@
   <div class="row col s6">
     <div id="genre-pick">
       <h3 class="row col s4">Pick a Genre:</h3> -->
-      <!--dropdown options not appearing. might have to make using js due to materialize-->
-      <!-- <form action=""> -->
-        <!-- <label for="pick-music"></label>
+<!--dropdown options not appearing. might have to make using js due to materialize-->
+<!-- <form action=""> -->
+<!-- <label for="pick-music"></label>
         <select name="music">
           <option value="rock">Rock</option>
           <option value="hip-hop">Hip-Hop</option>
@@ -50,67 +50,88 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!--CSS link-->
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head> 
+  <link rel="stylesheet" href="./stylecombined.css">
+</head>
 
 <body>
 
-    <div class="container col 12" style="min-width: 85%; min-height: 100%;">
+  <div class="container col 12" style="min-width: 85%; min-height: 100%;">
 
-<section class="genre-hero card container" style="max-width: 100%; text-align: center;">
-    <div clas="card-content" style="min-width: 100%; min-height: 100%;">
+    <section class="genre-hero button-form container-fluid box-container container"
+      style="max-width: 100%; text-align: center;">
+      <div clas="card-content" style="min-width: 100%; min-height: 100%;">
         <h1 class="genre-container grey-text text-lighten-1">{Genre} Concerts in {City Name}</h1>
         <!-- Add buton functionality bones -->
-    <!-- <div class="band-info-container"> -->
-        <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
-        <!-- <section class="conatiner-fluid box-container"> -->
-       
-       <span id="listed-band-info" style="justify-content:center"></span>
-       <div class="button-header  row container columns" style="justify-content:center; align-items:center; min-width: 100%; text-align:center; "> 
-       <h4 id="span-header  amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME}"</h4>
-       
-       <div id="button-header1" class="button-form card-action card large" >
-        <div class="first-button-row row button-form card-action card large" style="display:flex">
-            
-        <button type="button" class="btn playsongbtn1  pink-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGN NAME)</button>
-        <button type="button" class="btn playsongbtn2 offset-m6 pink-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGN NAME)</button>
-      </div>
-      <div class="second-button-row row">
-        <button type="button" class="btn playsongbtn3 pink-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG NAME)</button>
-        <button type="button" class="btn ticket-btn1  offset-m6 blue-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">PURCHASE TICKETS</button>
-      </div>
-      </div>
-</div>
-</section>
-    <div class="band-info-container2 container">
+        <div class="band-info-container row">
+          <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
+          <section class="conatiner-fluid">
 
-    <!-- Add buton functionality bones -->
+            <span id="listed-band-info" style="display:flex;align-items:center;justify-content:center"></span>
+            <div class="button-header container"
+              style="    position: relative;
+       top: 3vh;max-width: 662px; display: flex; justify-content: center; align-items:center; min-width: 100%; text-align:center; ">
+              <h4 class="header-h4-1 amber-text text-darken-1" style="font-size: clamp(23px, 4vw, 45px);">{BAND NAME} AT
+                {VENUE}{}DATE{TIME}
+                <!-- row -->
+                <div id="button-header1" class="card-action"
+                  style="position: relative; min-width: 85%; min-height: 400px; columns: 2; columns: auto auto; display:flex;">
 
-    <div class="band-info-container-bottom">
-        <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
-        <span id="listed-band-info" style="display:flex;align-items:center;justify-content:center"></span>
-        <div class="button-header2 umns" style="justify-content:center; align-items:center; min-width: 100%; text-align:center; ">
-        <h4 class="header-h4-2 amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME} 
-          <span id=listed-band-info-bottom></span></h4>
-        <button type="button" class="btn playsongbtn4  pink-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGN NAME)</button>
-        <button type="button" class="btn playsongbtn5  pink-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG NAME)</button>
 
-        <button type="button" class="btn playsongbtn6  pink-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG NAME)</button>
-        <button type="button" class="btn ticket-btn2 blue-text text-lighten-5" style="min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">PURCHASE TICKETS</button>
-    </div>
-    </div>
-    </div>
-</div>
-</form>
-</section>
+                  <button type="button" class="btn playsongbtn1  pink-text text-lighten-5" style="    position: absolute;
+        top: 7vh; left: 2vw; min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGN
+                    NAME)</button>
+                  <button type="button" class="btn playsongbtn2 pink-text text-lighten-5" style=" left: 28vw;
+        top: 6.6vh;position: absolute; min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play
+                    (SONGN NAME)</button>
 
-    
-<footer>
 
-    
-</footer>
+                  <div class="second-button-row column" style="columns: 2; columns: auto auto; display:flex;">
+                    <button type="button" class="btn playsongbtn3 pink-text text-lighten-5" style="    position: absolute;
+        top: 19vh; left: 2.4vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG
+                      NAME)</button>
+                    <button type="button" class="btn ticket-btn1  offset-m6 blue-text text-lighten-5" style="position: absolute;
+        top: 19vh; left: 28vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">PURCHASE
+                      TICKETS</button>
+                  </div>
+                </div>
+            </div>
+          </section>
 
+
+          <section class="bottom-portion" style="text-align: center;">
+            <div class="band-info-container2 container row">
+              <!-- Add buton functionality bones -->
+              <div class="band-info-container-bottom row">
+
+                <!-- MAKE INTO PROPER SQUARE BUTTONS USING FLEX/ADD EVENT LISTENERS  -->
+
+                <span id="listed-band-info-bottom" style="    position: relative;
+        top: 1vh;
+        left: 10vw;display:flex;align-items:center;justify-content:center"></span>
+
+                <div class="button-header-container container card large card-action row"
+                  style=" justify-content:center; align-items:center; min-width: 100%; text-align:center; ">
+                  <h4 class="header-h4-2 amber-text text-darken-1">{BAND NAME} AT {VENUE}{}DATE{TIME}
+
+                    <!-- <div id="button-header2" class="button-form2 card-action row" > -->
+
+                    <button type="button" class="btn playsongbtn4  pink-text text-lighten-5" style="    position: absolute;
+       top: 13vh; left: 5vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONGN NAME)</button>
+                    <button type="button" class="btn playsongbtn5  pink-text text-lighten-5" style="position: absolute;
+        top: 13vh; left: 22vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG NAME)</button>
+
+                    <div class="second-button-row-bottom card-action row">
+                      <button type="button" class="btn playsongbtn6 pink-text text-lighten-5" style="    position: absolute;
+        top: -14vh; left: 6vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">Play (SONG NAME)</button>
+                      <button type="button" class="btn ticket-btn2 blue-text text-lighten-5" style="    position: absolute;
+        top: -14vh; left: 26vw;min-height: 92px; min-width: 100px; max-width: 240px; max-height: 114px;">PURCHASE TICKETS</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
 
 </body>
+
 </html>

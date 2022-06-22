@@ -101,15 +101,17 @@ body {
     /* display: flex; */
      /* justify-content: space-evenly; */
 }
-.button-header
+.button-header{}
+
+
 .first-button-row {
-    display: flex;
+    /* display: flex; */
     /* flex-wrap: wrap; */
     
 
 }
 .second-button-row {
-    display: flex;
+    /* display: flex; */
     /* flex-wrap: wrap; */
 }
 
