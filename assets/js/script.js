@@ -53,10 +53,11 @@ let getEventByCityAndGenre = (city, genre) => {
   // grab events info for portland - pass in genera paramater (find by data.classifications.genre.name) 
   fetch(APIUrl).then(function (response) {
     if (response.ok) {
-      
+
       response.json().then(function (data) {
-      
+
         displayResults(data._embedded.events);
+        console.log(data._embedded.events)
 
       }).catch((error) => {
         // modal code 
@@ -71,7 +72,6 @@ let getEventByCityAndGenre = (city, genre) => {
         closeHandler.addEventListener("click", function () {
           instance.close();
         })
-
         searchForm.reset();
       })
 
@@ -90,7 +90,7 @@ submitBtn.addEventListener("click", buttonHandler,)
 // SHAZAAM API, fetch by artist name, list top 3 songs
 // for artists with more than one word in name, delete spaces (join characters)
 function getTop3Songs(artist, sampleBandDisplayContainer) {
-  let apiKey = '&rapidapi-key=77e419ac29mshfeec5755e4bb9d9p16d10bjsn597116cc48d7'
+  let apiKey = '&rapidapi-key=044b41251bmsh4f3163657b0933dp1a40e7jsn6430542ca2b5'
   let apiUrl = 'https://shazam.p.rapidapi.com/search?term=' + artist + '&locale=en-US&offset=0&limit=5' + apiKey;
 
   fetch(apiUrl).then(function (response) {
@@ -109,12 +109,16 @@ function getTop3Songs(artist, sampleBandDisplayContainer) {
       anchor.setAttribute('target', '_blank')
 
       let sampleBtn1 = document.createElement('button');
-      sampleBtn1.setAttribute('class', 'b1 btn songBtn playsongbtn1 col pink-text text-lighten-5 ');
+      sampleBtn1.setAttribute('class', 'b1 btn songBtn playsongbtn1 col pink-text text-lighten-5 flex');
       sampleBtn1.textContent = trackTitle;
 
       anchor.append(sampleBtn1)
 
-      sampleBandDisplayContainer.append(anchor);
+      // sample song container
+      let songContainer = document.createElement('li');
+      songContainer.append(anchor);
+
+      sampleBandDisplayContainer.append(songContainer)
 
 
       console.log(data.tracks.hits[j])
@@ -154,25 +158,24 @@ let displayResults = function (data) { //function name is differnt
   let resultTitle = document.createElement("h3");
   resultTitle.id = "ticket-title";
   resultTitle.setAttribute('class', 'center')
-  resultTitle.textContent = genre + " concerts in " + city
-    ;
+  resultTitle.textContent = genre + " Concerts in " + city;
   resultEl.appendChild(resultTitle);
 
-  // create song sample parent container
+  // create band/song display container
   sampleResultEl.setAttribute('class', 'col s12 m12 l5');
   sampleResultEl.id = "song-display";
   songDisplay.append(sampleResultEl);
 
   // song sample title
-  let sampleResultTitle = document.createElement('h4');
+  let sampleResultTitle = document.createElement('h3');
   sampleResultTitle.textContent = "Available Songs by Artists";
-  sampleResultTitle.setAttribute('class', 'center');
+  sampleResultTitle.setAttribute('class', 'center songSampleTitle');
   sampleResultEl.append(sampleResultTitle);
 
   //clear searched city and genera
   searchForm.reset();
 
-  getArtistInfo(3, data, sampleResultEl, resultEl, songDisplay);
+  getArtistInfo(10, data, sampleResultEl, resultEl, songDisplay);
 
 };
 
@@ -222,16 +225,15 @@ function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) 
     // parent container for each band 
     let sampleBandDisplayContainer = document.createElement('div');
     sampleBandDisplayContainer.setAttribute('id', 'sample-display');
-    sampleBandDisplayContainer.setAttribute('class', 'tourInfo col s12')
+    sampleBandDisplayContainer.setAttribute('class', 'tourInfo col s12');
+
 
     // song samples for band
     let sampleBandName = document.createElement('h4');
-    
-    
     sampleBandName.setAttribute('class', 'center-align amber-text text-darken-1')
     sampleBandName.setAttribute('id', 'bandName')
     sampleBandName.textContent = bandName;
-  
+
 
     // append band container to parent container 
     sampleResultEl.append(sampleBandDisplayContainer);
@@ -248,7 +250,7 @@ function getArtistInfo(numArtists, data, sampleResultEl, resultEl, songDisplay) 
     let ticketBtnEl = document.createElement("div");
     //ticketBtnEl.type = "submit";
     ticketBtnEl.id = "ticketbtn";
-    ticketBtnEl.setAttribute('class', 'ticketBtn center ticket-btn2 white-text text-lighten-5');
+    ticketBtnEl.setAttribute('class', 'center ticket-btn2 white-text text-lighten-5 ticketBTN');
     ticketBtnEl.textContent = "Purchase Tickets";
     anchor.append(ticketBtnEl);
 
