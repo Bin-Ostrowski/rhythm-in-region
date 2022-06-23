@@ -20,7 +20,7 @@ https://bin-ostrowski.github.io/rhythm-in-region/
 
 ### Created by:
 
-- Kayla Lindsey
+- Kayla Fischer
 - Sean Maddox
 - Chad Huntsman
 - Robin Ostrowski
