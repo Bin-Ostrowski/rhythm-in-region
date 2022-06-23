@@ -1,8 +1,9 @@
 # Rhythm in Region
+Ready to attend live concerts again but you are not sure who to see? Rhythm-In-Region is the app you need!
 
 ## Features
 
-When user searches for a music genre and city, they are presented with:
+When a user submits a preferred genre and city, they are presented with:
   - The first 5 concerts listed by date and time
   - Name of artist(s), concert venue, local date and time of event
   - Option to purchase ticket(s) to displayed concert
