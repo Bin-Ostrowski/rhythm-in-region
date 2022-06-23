@@ -17,14 +17,8 @@ body {
     background-attachment: fixed;
 }
 
-#display-title h3, #ticket-title h3 {
-    font-weight: 600;
-}
-
-#ticket-title {
-    margin-top: 42px;
-}
 /* Search Area */ 
+
 #pick-city, #genre-pick {
     margin-top: 4px;
 }
@@ -69,9 +63,10 @@ input::placeholder {
 #city-search {
     flex-wrap: nowrap;
 }
-/* Ticket Area */
-/* ticket button */
+/* Search Area End */
 
+
+/* Display songs */
 
 .songButton {
     margin: 5px ;
@@ -115,6 +110,24 @@ input::placeholder {
     margin-right: 10px;
 }
 
+#song-display, #sample-display {
+    flex-wrap: wrap;
+}
+
+.songSampleTitle {
+    text-align: center;
+}
+/* Display Song End */ 
+
+#display-title h3, #ticket-title h3 {
+    font-weight: 600;
+}
+
+#ticket-title {
+    margin-top: 42px;
+}
+
+/* Ticket Area */
 #bandName {
     display: inline-block;
     text-align: center;
@@ -155,10 +168,4 @@ div {
     background-color: rgb(3, 161, 161);
     border-radius: 5px;
 }
-#song-display, #sample-display {
-    flex-wrap: wrap;
-}
-
-.songSampleTitle {
-    text-align: center;
-}
+/* Ticket Area End*/ 
