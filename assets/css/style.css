@@ -24,6 +24,7 @@ body {
 #ticket-title {
     margin-top: 42px;
 }
+
 /* Search Area */ 
 #pick-city, #genre-pick {
     margin-top: 4px;
@@ -69,10 +70,9 @@ input::placeholder {
 #city-search {
     flex-wrap: nowrap;
 }
+
 /* Ticket Area */
 /* ticket button */
-
-
 .songButton {
     margin: 5px ;
 }
@@ -94,12 +94,12 @@ input::placeholder {
     padding-right: 10px;
     background-color: rgb(44, 22, 44, 0.6);
     padding: 10px;
-   
 }
 
 #song-display {
     padding-bottom: 10px;
 }
+
 #song-display #sample-display .b1 {
     background-color: rgb(44, 22, 44);
     display: inline-flex;
@@ -154,7 +154,9 @@ div {
 .ticketBTN {
     background-color: rgb(3, 161, 161);
     border-radius: 5px;
+    padding: 10px 0;
 }
+
 #song-display, #sample-display {
     flex-wrap: wrap;
 }
